@@ -1,6 +1,6 @@
 # pragmatic_flutter
 
-A new Flutter project.
+Sample code snippets from Pragmatic Flutter Book
 
 ## Getting Started
 
