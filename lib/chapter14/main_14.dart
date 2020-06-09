@@ -6,7 +6,6 @@ import '../config.dart';
 //Making HTTP request
 Future<String> makeHttpCall() async {
   final apiKey = "$YOUR_API_KEY";
-
   final apiEndpoint =
       "https://www.googleapis.com/books/v1/volumes?key=$apiKey&q=python";
   final http.Response response =
@@ -22,25 +21,25 @@ class BooksApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BooksListing(),
+      home: BookListing(),
     );
   }
 }
 
-class BooksListing extends StatefulWidget {
+class BookListing extends StatefulWidget {
   @override
-  _BooksListingState createState() => _BooksListingState();
+  _BookListingState createState() => _BookListingState();
 }
 
-class _BooksListingState extends State<BooksListing> {
+class _BookListingState extends State<BookListing> {
   String booksResponse;
 
-  //method to fetch jobs asynchronously
+  //method to fetch books asynchronously
   fetchBooks() async {
     //making REST API call
     var response = await makeHttpCall();
 
-    //Updating jobsResponse to fetched remote data
+    //Updating booksResponse to fetched remote data
     setState(() {
       booksResponse = response;
     });
@@ -58,13 +57,12 @@ class _BooksListingState extends State<BooksListing> {
     //fetchBooks();
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Books Listing"),
-      ),
-      body: SingleChildScrollView(
-        child: booksResponse != null
-            ? Text("Google Books API response\n $booksResponse")
-            : Text("No Response from API"),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: booksResponse != null
+              ? Text("Google Books API response\n $booksResponse")
+              : Text("No Response from API"),
+        ),
       ),
     );
   }

@@ -1,4 +1,4 @@
-package com.example.pragmatic_flutter
+package com.pcc.pragmatic_flutter
 
 import io.flutter.embedding.android.FlutterActivity
 
