@@ -26,13 +26,11 @@ dependencies:
 
   http: ^0.12.0+4
 
-  flutter_html: ^0.11.1
+#  flutter_html: ^0.11.1
 
-  #To open how_to_apply and company website url
-  url_launcher: ^5.4.10
+  #To open web reader link and buylink from BookDetailsPage
+  url_launcher: ^5.4.11
 
-  #Converting markdown to html
-  markdown: ^2.1.4
 
 
   # The following adds the Cupertino Icons font to your application.
