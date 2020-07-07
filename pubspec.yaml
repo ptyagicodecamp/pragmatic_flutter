@@ -31,6 +31,8 @@ dependencies:
   #To open web reader link and buylink from BookDetailsPage
   url_launcher: ^5.4.11
 
+  #Provider package
+  provider: ^4.1.2
 
 
   # The following adds the Cupertino Icons font to your application.
