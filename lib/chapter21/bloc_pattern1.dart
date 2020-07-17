@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 //Uses simply int to represent the state for a given event at a time
 
 void main() {
-  runApp(MyApp());
+  runApp(CounterApp());
 }
 
-class MyApp extends StatelessWidget {
+class CounterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'BLoC Pattern #1'),
+      home: MyHomePage(title: 'BLoC Pattern'),
     );
   }
 }
