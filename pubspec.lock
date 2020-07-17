@@ -7,7 +7,14 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.4.1"
+    version: "2.4.2"
+  bloc:
+    dependency: transitive
+    description:
+      name: bloc
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -21,7 +28,7 @@ packages:
       name: characters
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0"
+    version: "1.1.0-nullsafety"
   charcode:
     dependency: transitive
     description:
@@ -42,7 +49,14 @@ packages:
       name: collection
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.14.13"
+    version: "1.15.0-nullsafety"
+  cubit:
+    dependency: transitive
+    description:
+      name: cubit
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.2"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -62,6 +76,20 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_bloc:
+    dependency: "direct main"
+    description:
+      name: flutter_bloc
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.1"
+  flutter_cubit:
+    dependency: transitive
+    description:
+      name: flutter_cubit
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -78,7 +106,7 @@ packages:
       name: http
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.1"
+    version: "0.12.2"
   http_parser:
     dependency: transitive
     description:
@@ -99,7 +127,7 @@ packages:
       name: meta
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.8"
+    version: "1.3.0-nullsafety"
   nested:
     dependency: transitive
     description:
@@ -120,7 +148,7 @@ packages:
       name: pedantic
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.9.0"
+    version: "1.9.2"
   platform_detect:
     dependency: transitive
     description:
@@ -141,7 +169,7 @@ packages:
       name: provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.1.3+1"
+    version: "4.3.1"
   pub_semver:
     dependency: transitive
     description:
@@ -167,7 +195,7 @@ packages:
       name: stack_trace
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.9.3"
+    version: "1.9.5"
   stream_channel:
     dependency: transitive
     description:
@@ -202,14 +230,21 @@ packages:
       name: typed_data
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.0"
+    version: "1.3.0-nullsafety"
   url_launcher:
     dependency: "direct main"
     description:
       name: url_launcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.4.11"
+    version: "5.5.0"
+  url_launcher_linux:
+    dependency: transitive
+    description:
+      name: url_launcher_linux
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1+1"
   url_launcher_macos:
     dependency: transitive
     description:
@@ -237,7 +272,7 @@ packages:
       name: vector_math
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.8"
+    version: "2.1.0-nullsafety"
 sdks:
-  dart: ">=2.9.0-14.0.dev <3.0.0"
+  dart: ">=2.9.0-18.0 <2.9.0"
   flutter: ">=1.16.0 <2.0.0"
