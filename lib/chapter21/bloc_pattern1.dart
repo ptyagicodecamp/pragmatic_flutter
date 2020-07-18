@@ -33,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _bloc = CounterBloc();
+  final CounterBloc _bloc = CounterBloc();
 
   @override
   Widget build(BuildContext context) {
@@ -80,40 +80,27 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-//Option #1 to declare CounterEvent
+//Declaring CounterEvent
 enum CounterEvent { increment }
 
-//Option #2 to declare CounterEvent
-//abstract class CounterEvent {}
-//class IncrementEvent extends CounterEvent {}
-
-//Option #2 to declare Counter's State
-//class CounterState {
-//  final int counter;
-//
-//  const CounterState({this.counter});
-//
-//  factory CounterState.initial() => CounterState(counter: 0);
-//}
-
 class CounterBloc {
-  //#0: Setting up event and state controllers and their sink and streams
-
-  //Option #1 to declare state of the counter
+  //Declaring state of the counter as int
   int _counter = 0;
 
-  //Controller for State
+  //Managing input event stream
+  final _eventController = StreamController<CounterEvent>();
+
+  //UI interaction events are pushed into sink _eventController's sink.
+  Sink<CounterEvent> get eventSink => _eventController.sink;
+
+  //Managing stream of states
   final _stateController = StreamController<int>();
+
   //State stream's Sink to add states into
   StreamSink<int> get _stateSink => _stateController.sink;
 
-  //#5: StateController's stream is providing the updated state(s)
-  //Stream of states. public
+  //#5: StateController's stream is providing the updated state(s) to UI widgets
   Stream<int> get counter => _stateController.stream;
-
-  //Interface putting events into sink _eventController's sink.
-  final _eventController = StreamController<CounterEvent>();
-  Sink<CounterEvent> get eventSink => _eventController.sink;
 
   //#2: Event controller's stream is listening to the events and feeding into eventToState mapper
   //Listening to incoming UI events and mapping them into corresponding output States

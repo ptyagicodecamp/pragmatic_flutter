@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final String title;
 
   //#2: Initializing Bloc (listening)
-  final CounterBloc _counterBloc = CounterBloc(CounterState.initial());
+  final CounterBloc _bloc = CounterBloc(CounterState.initial());
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             //#6: Rebuilding Text widget for new state (count)
             BlocBuilder<CounterBloc, CounterState>(
-              bloc: _counterBloc,
+              bloc: _bloc,
               builder: (context, state) {
                 return Text(
                   '${state.counter}',
@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         //#1: Events added to eventController's sink
-        onPressed: () => _counterBloc.add(IncrementEvent()),
+        onPressed: () => _bloc.add(IncrementEvent()),
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void dispose() {
     super.dispose();
-    _counterBloc.close();
+    _bloc.close();
   }
 }
 
@@ -97,6 +97,7 @@ class CounterState {
 
 //#2: Taken care by Bloc library (listening to events)
 class CounterBloc extends Bloc<CounterEvent, CounterState> {
+  //Initializing initial CounterState
   CounterBloc(CounterState initialState) : super(initialState);
 
   //#3: Mapping events to their corresponding state based on the business logic

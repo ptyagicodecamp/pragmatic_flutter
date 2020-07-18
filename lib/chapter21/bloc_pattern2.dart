@@ -34,7 +34,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _bloc = CounterBloc();
+  final CounterBloc _bloc = CounterBloc();
 
   @override
   Widget build(BuildContext context) {
@@ -82,15 +82,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-//Option #1 to declare CounterEvent
-//enum CounterEvent { increment }
-
-//Option #2 to declare CounterEvent
+//Declare CounterEvent
 abstract class CounterEvent {}
 
 class IncrementEvent extends CounterEvent {}
 
-//Option #2 to declare Counter's State
+//Declare Counter's State
 class CounterState {
   final int counter;
 
@@ -100,20 +97,22 @@ class CounterState {
 }
 
 class CounterBloc {
-  //#0: Setting up event and state controllers and their sink and streams
-  //Interface putting events into sink _eventController's sink.
-  final _eventController = StreamController<CounterEvent>();
-  Sink<CounterEvent> get eventSink => _eventController.sink;
-
+  //Setting the initial state for the CounterState
   CounterState _currentState = CounterState.initial();
 
-  //Controller for State
+  //Managing input event stream
+  final _eventController = StreamController<CounterEvent>();
+
+  //UI interaction events are pushed into sink _eventController's sink.
+  Sink<CounterEvent> get eventSink => _eventController.sink;
+
+  //Managing stream of states
   final _stateController = StreamController<CounterState>();
+
   //State stream's Sink to add states into
   StreamSink<CounterState> get _stateSink => _stateController.sink;
 
-  //#5: StateController's stream is providing the updated state(s)
-  //Stream of states. public
+  //#5: StateController's stream is providing the updated state(s) to UI widgets
   Stream<CounterState> get counter => _stateController.stream;
 
   //#2: Event controller's stream is listening to the events and feeding into eventToState mapper
@@ -136,8 +135,7 @@ class CounterBloc {
       _currentState = CounterState(counter: _currentState.counter + 1);
     }
 
-    //#4: Adding newly formed state is added into State controller's sink
-    //update the _counter value into stateController's sink (_stateSink)
+    //#4: Adding current output state to _stateSink
     _stateSink.add(_currentState);
   }
 
