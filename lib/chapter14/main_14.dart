@@ -3,6 +3,9 @@ import 'package:http/http.dart' as http;
 
 import '../config.dart';
 
+//Uncomment the line below to run from this file
+void main() => runApp(BooksApp());
+
 //Making HTTP request
 Future<String> makeHttpCall() async {
   final apiKey = "$YOUR_API_KEY";

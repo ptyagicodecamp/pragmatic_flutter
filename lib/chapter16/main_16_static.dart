@@ -9,6 +9,9 @@ import 'book.dart';
 import 'book_details_page.dart';
 import 'booktile.dart';
 
+//Uncomment the line below to run from this file
+//void main() => runApp(BooksApp());
+
 //The booksListing data is available global to app
 List<BookModel> booksListing;
 
