@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 //Chapter07: Switching greetings using FAB and StatefulWidget
+
+//Entry point to the app
 void main() {
   runApp(HelloBooksApp());
 }
@@ -11,10 +13,6 @@ class HelloBooksApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
       home: MyHomePage(title: 'Hello Books'),
     );
   }
