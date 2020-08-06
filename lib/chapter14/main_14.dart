@@ -24,17 +24,17 @@ class BooksApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BookListing(),
+      home: BooksListing(),
     );
   }
 }
 
-class BookListing extends StatefulWidget {
+class BooksListing extends StatefulWidget {
   @override
-  _BookListingState createState() => _BookListingState();
+  _BooksListingState createState() => _BooksListingState();
 }
 
-class _BookListingState extends State<BookListing> {
+class _BooksListingState extends State<BooksListing> {
   String booksResponse;
 
   //method to fetch books asynchronously
