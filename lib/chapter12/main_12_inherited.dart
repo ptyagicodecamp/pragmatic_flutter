@@ -10,7 +10,7 @@ class BooksApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RootWidget(
-      child: BooksAppPage(
+      child: BooksAppScreen(
         child: BooksListing(),
       ),
     );
@@ -65,10 +65,10 @@ class MyInheritedWidget extends InheritedWidget {
   }
 }
 
-class BooksAppPage extends StatelessWidget {
+class BooksAppScreen extends StatelessWidget {
   final Widget child;
 
-  BooksAppPage({
+  BooksAppScreen({
     Key key,
     @required this.child,
   }) : super(key: key);
