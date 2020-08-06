@@ -31,12 +31,13 @@ class RootWidget extends StatefulWidget {
 }
 
 class RootWidgetState extends State<RootWidget> {
-  int _themeIndex = 0;
-  int get themeIndex => _themeIndex;
+  MyThemes _currentTheme = MyThemes.light;
+  MyThemes get currentTheme => _currentTheme;
 
   void switchTheme() {
     setState(() {
-      _themeIndex = _themeIndex == 0 ? 1 : 0;
+      _currentTheme =
+          _currentTheme == MyThemes.light ? MyThemes.dark : MyThemes.light;
     });
   }
 
@@ -72,21 +73,20 @@ class BooksAppPage extends StatelessWidget {
     @required this.child,
   }) : super(key: key);
 
-  void smileyPressed(BuildContext context) {
-    RootWidget.of(context).switchTheme();
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: themeData[RootWidget.of(context).themeIndex],
+      debugShowCheckedModeBanner: false,
+      theme: RootWidget.of(context).currentTheme == MyThemes.light
+          ? themeData[0]
+          : themeData[1],
       home: Scaffold(
         appBar: AppBar(
           title: Text("Books Listing"),
           actions: [
             IconButton(
-              icon: Icon(Icons.insert_emoticon),
-              onPressed: () => smileyPressed(context),
+              icon: Icon(Icons.all_inclusive),
+              onPressed: () => RootWidget.of(context).switchTheme(),
             )
           ],
         ),
@@ -95,6 +95,8 @@ class BooksAppPage extends StatelessWidget {
     );
   }
 }
+
+enum MyThemes { light, dark }
 
 final List<ThemeData> themeData = [
   ThemeData(

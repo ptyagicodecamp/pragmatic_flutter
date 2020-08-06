@@ -30,7 +30,7 @@ class _BooksAppState extends State<BooksApp> {
             title: Text("Books Listing"),
             actions: [
               IconButton(
-                icon: Icon(Icons.insert_emoticon),
+                icon: Icon(Icons.all_inclusive),
                 onPressed: () =>
                     Provider.of<ThemesNotifier>(context, listen: false)
                         .switchTheme(),
