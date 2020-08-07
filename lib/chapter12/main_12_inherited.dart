@@ -82,6 +82,7 @@ class BooksAppScreen extends StatelessWidget {
           : themeData[1],
       home: Scaffold(
         appBar: AppBar(
+          leading: Icon(Icons.home),
           title: Text("Books Listing"),
           actions: [
             IconButton(

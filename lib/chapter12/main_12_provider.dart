@@ -27,6 +27,7 @@ class _BooksAppState extends State<BooksApp> {
         theme: Provider.of<ThemesNotifier>(context).currentThemeData,
         home: Scaffold(
           appBar: AppBar(
+            leading: Icon(Icons.home),
             title: Text("Books Listing"),
             actions: [
               IconButton(
