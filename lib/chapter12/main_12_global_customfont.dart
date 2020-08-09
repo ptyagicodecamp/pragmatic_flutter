@@ -1,5 +1,5 @@
 //Building BooksApp App's User Interface.
-//Global theme modularization
+//Custom Fonts demonstration
 import 'package:flutter/material.dart';
 
 import 'themes.dart';
