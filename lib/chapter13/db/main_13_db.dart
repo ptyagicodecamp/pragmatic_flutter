@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../themes.dart';
-import 'plugins/unsupported.dart';
+import 'plugins/shared.dart';
 import 'theme_prefs.dart';
 
 //Uncomment the line below to run from this file
@@ -33,14 +33,16 @@ class _BooksAppState extends State<BooksApp> {
 
   //NEW CODE: Fetching theme_id DB
   Future<int> getActiveThemeID(BuildContext context) {
-    return Provider.of<MyDatabase>(context)
+    return Provider.of<MyDatabase>(context, listen: false)
         .getActiveTheme()
         .then((themePref) => themePref.themeId);
   }
 
   void loadActiveTheme(BuildContext context) async {
     int themeId = await getActiveThemeID(context);
-    currentTheme = AppThemes.values[themeId];
+    setState(() {
+      currentTheme = AppThemes.values[themeId];
+    });
   }
 
   //NEW CODE: Save theme_id in DB
@@ -51,7 +53,7 @@ class _BooksAppState extends State<BooksApp> {
         ? currentTheme = AppThemes.dark
         : currentTheme = AppThemes.light;
 
-    var myDatabase = Provider.of<MyDatabase>(context);
+    var myDatabase = Provider.of<MyDatabase>(context, listen: false);
     var isOldThemeActive = myDatabase.themeIdExists(oldTheme.index);
 
     if (isOldThemeActive != null) {

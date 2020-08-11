@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             //#6: Rebuilding Text widget for new state (count)
             BlocBuilder<CounterBloc, CounterState>(
-              bloc: _bloc,
+              cubit: _bloc,
               builder: (context, state) {
                 return Text(
                   '${state.counter}',
