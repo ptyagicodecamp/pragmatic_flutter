@@ -23,6 +23,29 @@ class ThemePref extends DataClass implements Insertable<ThemePref> {
           .mapFromDatabaseResponse(data['${effectivePrefix}theme_name']),
     );
   }
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (!nullToAbsent || themeId != null) {
+      map['theme_id'] = Variable<int>(themeId);
+    }
+    if (!nullToAbsent || themeName != null) {
+      map['theme_name'] = Variable<String>(themeName);
+    }
+    return map;
+  }
+
+  ThemePrefsCompanion toCompanion(bool nullToAbsent) {
+    return ThemePrefsCompanion(
+      themeId: themeId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(themeId),
+      themeName: themeName == null && nullToAbsent
+          ? const Value.absent()
+          : Value(themeName),
+    );
+  }
+
   factory ThemePref.fromJson(Map<String, dynamic> json,
       {ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
@@ -38,18 +61,6 @@ class ThemePref extends DataClass implements Insertable<ThemePref> {
       'themeId': serializer.toJson<int>(themeId),
       'themeName': serializer.toJson<String>(themeName),
     };
-  }
-
-  @override
-  ThemePrefsCompanion createCompanion(bool nullToAbsent) {
-    return ThemePrefsCompanion(
-      themeId: themeId == null && nullToAbsent
-          ? const Value.absent()
-          : Value(themeId),
-      themeName: themeName == null && nullToAbsent
-          ? const Value.absent()
-          : Value(themeName),
-    );
   }
 
   ThemePref copyWith({int themeId, String themeName}) => ThemePref(
@@ -87,11 +98,42 @@ class ThemePrefsCompanion extends UpdateCompanion<ThemePref> {
     @required String themeName,
   })  : themeId = Value(themeId),
         themeName = Value(themeName);
+  static Insertable<ThemePref> custom({
+    Expression<int> themeId,
+    Expression<String> themeName,
+  }) {
+    return RawValuesInsertable({
+      if (themeId != null) 'theme_id': themeId,
+      if (themeName != null) 'theme_name': themeName,
+    });
+  }
+
   ThemePrefsCompanion copyWith({Value<int> themeId, Value<String> themeName}) {
     return ThemePrefsCompanion(
       themeId: themeId ?? this.themeId,
       themeName: themeName ?? this.themeName,
     );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (themeId.present) {
+      map['theme_id'] = Variable<int>(themeId.value);
+    }
+    if (themeName.present) {
+      map['theme_name'] = Variable<String>(themeName.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ThemePrefsCompanion(')
+          ..write('themeId: $themeId, ')
+          ..write('themeName: $themeName')
+          ..write(')'))
+        .toString();
   }
 }
 
@@ -133,18 +175,19 @@ class $ThemePrefsTable extends ThemePrefs
   @override
   final String actualTableName = 'theme_prefs';
   @override
-  VerificationContext validateIntegrity(ThemePrefsCompanion d,
+  VerificationContext validateIntegrity(Insertable<ThemePref> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
-    if (d.themeId.present) {
+    final data = instance.toColumns(true);
+    if (data.containsKey('theme_id')) {
       context.handle(_themeIdMeta,
-          themeId.isAcceptableValue(d.themeId.value, _themeIdMeta));
+          themeId.isAcceptableOrUnknown(data['theme_id'], _themeIdMeta));
     } else if (isInserting) {
       context.missing(_themeIdMeta);
     }
-    if (d.themeName.present) {
+    if (data.containsKey('theme_name')) {
       context.handle(_themeNameMeta,
-          themeName.isAcceptableValue(d.themeName.value, _themeNameMeta));
+          themeName.isAcceptableOrUnknown(data['theme_name'], _themeNameMeta));
     } else if (isInserting) {
       context.missing(_themeNameMeta);
     }
@@ -157,18 +200,6 @@ class $ThemePrefsTable extends ThemePrefs
   ThemePref map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
     return ThemePref.fromData(data, _db, prefix: effectivePrefix);
-  }
-
-  @override
-  Map<String, Variable> entityToSql(ThemePrefsCompanion d) {
-    final map = <String, Variable>{};
-    if (d.themeId.present) {
-      map['theme_id'] = Variable<int, IntType>(d.themeId.value);
-    }
-    if (d.themeName.present) {
-      map['theme_name'] = Variable<String, StringType>(d.themeName.value);
-    }
-    return map;
   }
 
   @override

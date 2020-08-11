@@ -1,21 +1,19 @@
 //Persisting selected theme using Database
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../themes.dart';
 import 'plugins/shared.dart';
 import 'theme_prefs.dart';
 
 //Uncomment the line below to run from this file
-//void main2() => runApp(BooksApp());
-void main() => runApp(
-      Provider<MyDatabase>(
-        create: (_) => constructDb(logStatements: true),
-        dispose: (context, db) => db.close(),
-        child: BooksApp(),
-      ),
-    );
+void main() => runApp(BooksApp());
+//void main() => runApp(
+//      Provider<MyDatabase>(
+//        create: (_) => constructDb(logStatements: true),
+//        dispose: (context, db) => db.close(),
+//        child: BooksApp(),
+//      ),
+//    );
 
 //Showing book listing in ListView
 class BooksApp extends StatefulWidget {
@@ -25,23 +23,13 @@ class BooksApp extends StatefulWidget {
 
 class _BooksAppState extends State<BooksApp> {
   AppThemes currentTheme = AppThemes.light;
-
-  Future<void> persistTheme(AppThemes theme) async {
-    var sharedPrefs = await SharedPreferences.getInstance();
-    await sharedPrefs.setInt('theme_id', theme.index);
-  }
+  MyDatabase _database;
 
   //NEW CODE: Fetching theme_id DB
-  Future<int> getActiveThemeID(BuildContext context) {
-    return Provider.of<MyDatabase>(context, listen: false)
-        .getActiveTheme()
-        .then((themePref) => themePref.themeId);
-  }
-
   void loadActiveTheme(BuildContext context) async {
-    int themeId = await getActiveThemeID(context);
+    ThemePref themePref = await _database.getActiveTheme();
     setState(() {
-      currentTheme = AppThemes.values[themeId];
+      currentTheme = AppThemes.values[themePref.themeId];
     });
   }
 
@@ -53,14 +41,13 @@ class _BooksAppState extends State<BooksApp> {
         ? currentTheme = AppThemes.dark
         : currentTheme = AppThemes.light;
 
-    var myDatabase = Provider.of<MyDatabase>(context, listen: false);
-    var isOldThemeActive = myDatabase.themeIdExists(oldTheme.index);
+    var isOldThemeActive = _database.themeIdExists(oldTheme.index);
 
     if (isOldThemeActive != null) {
-      myDatabase.deactivateTheme(oldTheme.index);
+      _database.deactivateTheme(oldTheme.index);
     }
     setState(() {
-      myDatabase.activateTheme(currentTheme);
+      _database.activateTheme(currentTheme);
     });
   }
 
@@ -68,8 +55,18 @@ class _BooksAppState extends State<BooksApp> {
   void initState() {
     super.initState();
 
-    //NEW CODE: Load theme from sharedPreference
+    //NEW CODE: Initializing DB
+    _database = constructDb(logStatements: true);
+
+    //NEW CODE: Loading theme from DB
     loadActiveTheme(context);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    //NEW CODE: Don't forget to close the DB
+    _database.close();
   }
 
   @override
