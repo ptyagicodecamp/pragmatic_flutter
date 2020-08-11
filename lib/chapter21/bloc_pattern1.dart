@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 //Uses enum for Counter Increment Event
 //Uses simply int to represent the state for a given event at a time
 
-void main() {
-  runApp(CounterApp());
-}
+//void main() {
+//  runApp(CounterApp());
+//}
 
 class CounterApp extends StatelessWidget {
   @override

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 //Chapter06: Project Structure of hello_books project
-void main() {
-  runApp(MyApp());
-}
+//void main() {
+//  runApp(MyApp());
+//}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

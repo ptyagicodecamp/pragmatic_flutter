@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
-  runApp(CounterApp());
-}
+//void main() {
+//  runApp(CounterApp());
+//}
 
 class CounterApp extends StatelessWidget {
   // This widget is the root of your application.

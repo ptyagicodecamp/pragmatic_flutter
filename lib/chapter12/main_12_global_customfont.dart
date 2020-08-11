@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'themes.dart';
 
 //Uncomment the line below to run from this file
-void main() => runApp(BooksApp());
+//void main() => runApp(BooksApp());
 
 //Showing book listing in ListView
 class BooksApp extends StatelessWidget {

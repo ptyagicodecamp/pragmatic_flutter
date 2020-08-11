@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 //Uncomment the line below to run from this file
-void main() => runApp(CounterApp());
+//void main() => runApp(CounterApp());
 
 class CounterApp extends StatelessWidget {
   // This widget is the root of your application.

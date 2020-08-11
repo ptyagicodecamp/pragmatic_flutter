@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 //Uses CounterEvent class for events
 //User CounterState class for states
 
-void main() {
-  runApp(CounterApp());
-}
+//void main() {
+//  runApp(CounterApp());
+//}
 
 class CounterApp extends StatelessWidget {
   @override

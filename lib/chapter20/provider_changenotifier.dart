@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 //The CounterApp uses Provider package + ChangeNotifier
-void main() {
-  //Providers are above CounterApp.
-  runApp(
-    ChangeNotifierProvider(
-      create: (_) => CountNotifier(),
-      child: CounterApp(),
-    ),
-  );
-}
+//void main() {
+//  //Providers are above CounterApp.
+//  runApp(
+//    ChangeNotifierProvider(
+//      create: (_) => CountNotifier(),
+//      child: CounterApp(),
+//    ),
+//  );
+//}
 
 //ChangeNotifier. Notifies about the change/update in counter
 class CountNotifier with ChangeNotifier {

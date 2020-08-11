@@ -1,13 +1,11 @@
-//Building BooksApp App's User Interface.
-//Switching from default light theme to dark theme and vice versa
+//Persisting selected theme using sharedPreference
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'themes.dart';
 
-enum AppThemes { light, dark }
-
 //Uncomment the line below to run from this file
-//void main() => runApp(BooksApp());
+void main() => runApp(BooksApp());
 
 //Showing book listing in ListView
 class BooksApp extends StatefulWidget {
@@ -16,14 +14,36 @@ class BooksApp extends StatefulWidget {
 }
 
 class _BooksAppState extends State<BooksApp> {
-  //NEW CODE
-  var currentTheme = AppThemes.light;
+  AppThemes currentTheme = AppThemes.light;
+
+  //NEW CODE: Save theme_id using SharedPreference
+  Future<void> persistTheme(AppThemes theme) async {
+    var sharedPrefs = await SharedPreferences.getInstance();
+    await sharedPrefs.setInt('theme_id', theme.index);
+  }
+
+  //NEW CODE: Fetching theme_id from SharedPreference
+  void loadActiveTheme(BuildContext context) async {
+    var sharedPrefs = await SharedPreferences.getInstance();
+    int themeId = sharedPrefs.getInt('theme_id') ?? AppThemes.light.index;
+
+    setState(() {
+      currentTheme = AppThemes.values[themeId];
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    //NEW CODE: Load theme from sharedPreference
+    loadActiveTheme(context);
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      //NEW CODE: applying selected theme
       theme: currentTheme == AppThemes.light ? defaultTheme : darkTheme,
       home: Scaffold(
         appBar: AppBar(
@@ -32,12 +52,14 @@ class _BooksAppState extends State<BooksApp> {
             actions: [
               IconButton(
                 icon: Icon(Icons.all_inclusive),
-                //NEW CODE: Toggling from light to dark theme and vice versa
                 onPressed: () {
                   setState(() {
                     currentTheme = currentTheme == AppThemes.light
                         ? AppThemes.dark
                         : AppThemes.light;
+
+                    //NEW CODE: save current selection
+                    persistTheme(currentTheme);
                   });
                 },
               )

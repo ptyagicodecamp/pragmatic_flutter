@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+enum AppThemes { light, dark }
 //Themes definitions
 ThemeData get defaultTheme => ThemeData(
       // Define the default brightness and colors for the overall app.

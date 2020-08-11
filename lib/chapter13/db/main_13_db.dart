@@ -1,13 +1,21 @@
-//Building BooksApp App's User Interface.
-//Switching from default light theme to dark theme and vice versa
+//Persisting selected theme using Database
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import 'themes.dart';
-
-enum AppThemes { light, dark }
+import '../themes.dart';
+import 'plugins/unsupported.dart';
+import 'theme_prefs.dart';
 
 //Uncomment the line below to run from this file
-//void main() => runApp(BooksApp());
+//void main2() => runApp(BooksApp());
+void main() => runApp(
+      Provider<MyDatabase>(
+        create: (_) => constructDb(logStatements: true),
+        dispose: (context, db) => db.close(),
+        child: BooksApp(),
+      ),
+    );
 
 //Showing book listing in ListView
 class BooksApp extends StatefulWidget {
@@ -16,14 +24,56 @@ class BooksApp extends StatefulWidget {
 }
 
 class _BooksAppState extends State<BooksApp> {
-  //NEW CODE
-  var currentTheme = AppThemes.light;
+  AppThemes currentTheme = AppThemes.light;
+
+  Future<void> persistTheme(AppThemes theme) async {
+    var sharedPrefs = await SharedPreferences.getInstance();
+    await sharedPrefs.setInt('theme_id', theme.index);
+  }
+
+  //NEW CODE: Fetching theme_id DB
+  Future<int> getActiveThemeID(BuildContext context) {
+    return Provider.of<MyDatabase>(context)
+        .getActiveTheme()
+        .then((themePref) => themePref.themeId);
+  }
+
+  void loadActiveTheme(BuildContext context) async {
+    int themeId = await getActiveThemeID(context);
+    currentTheme = AppThemes.values[themeId];
+  }
+
+  //NEW CODE: Save theme_id in DB
+  void switchTheme(BuildContext context) async {
+    var oldTheme = currentTheme;
+
+    currentTheme == AppThemes.light
+        ? currentTheme = AppThemes.dark
+        : currentTheme = AppThemes.light;
+
+    var myDatabase = Provider.of<MyDatabase>(context);
+    var isOldThemeActive = myDatabase.themeIdExists(oldTheme.index);
+
+    if (isOldThemeActive != null) {
+      myDatabase.deactivateTheme(oldTheme.index);
+    }
+    setState(() {
+      myDatabase.activateTheme(currentTheme);
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    //NEW CODE: Load theme from sharedPreference
+    loadActiveTheme(context);
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      //NEW CODE: applying selected theme
       theme: currentTheme == AppThemes.light ? defaultTheme : darkTheme,
       home: Scaffold(
         appBar: AppBar(
@@ -32,14 +82,7 @@ class _BooksAppState extends State<BooksApp> {
             actions: [
               IconButton(
                 icon: Icon(Icons.all_inclusive),
-                //NEW CODE: Toggling from light to dark theme and vice versa
-                onPressed: () {
-                  setState(() {
-                    currentTheme = currentTheme == AppThemes.light
-                        ? AppThemes.dark
-                        : AppThemes.light;
-                  });
-                },
+                onPressed: () => switchTheme(context),
               )
             ]),
         body: BooksListing(),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//Switching themes using Provider
 enum MyThemes { light, dark }
 
 class ThemesNotifier with ChangeNotifier {

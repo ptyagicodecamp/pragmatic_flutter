@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 //Chapter05: Test app for demonstrating Setting up development Environment for
 //Android, iOS, Web, Desktop (macOS & Linux).
 //macOS and Linux can only be run on their respective operating systems.
-void main() {
-  runApp(MyApp());
-}
+//void main() {
+//  runApp(MyApp());
+//}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

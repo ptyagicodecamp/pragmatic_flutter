@@ -6,14 +6,14 @@ import 'booklisting.dart';
 import 'themes_notifier.dart';
 
 //Entry point to app
-void main() => runApp(
-      ChangeNotifierProvider<ThemesNotifier>(
-        child: BooksApp(),
-        create: (BuildContext context) {
-          return ThemesNotifier();
-        },
-      ),
-    );
+//void main() => runApp(
+//      ChangeNotifierProvider<ThemesNotifier>(
+//        child: BooksApp(),
+//        create: (BuildContext context) {
+//          return ThemesNotifier();
+//        },
+//      ),
+//    );
 
 class BooksApp extends StatefulWidget {
   @override

@@ -1,0 +1,188 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'theme_prefs.dart';
+
+// **************************************************************************
+// MoorGenerator
+// **************************************************************************
+
+// ignore_for_file: unnecessary_brace_in_string_interps, unnecessary_this
+class ThemePref extends DataClass implements Insertable<ThemePref> {
+  final int themeId;
+  final String themeName;
+  ThemePref({@required this.themeId, @required this.themeName});
+  factory ThemePref.fromData(Map<String, dynamic> data, GeneratedDatabase db,
+      {String prefix}) {
+    final effectivePrefix = prefix ?? '';
+    final intType = db.typeSystem.forDartType<int>();
+    final stringType = db.typeSystem.forDartType<String>();
+    return ThemePref(
+      themeId:
+          intType.mapFromDatabaseResponse(data['${effectivePrefix}theme_id']),
+      themeName: stringType
+          .mapFromDatabaseResponse(data['${effectivePrefix}theme_name']),
+    );
+  }
+  factory ThemePref.fromJson(Map<String, dynamic> json,
+      {ValueSerializer serializer}) {
+    serializer ??= moorRuntimeOptions.defaultSerializer;
+    return ThemePref(
+      themeId: serializer.fromJson<int>(json['themeId']),
+      themeName: serializer.fromJson<String>(json['themeName']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer serializer}) {
+    serializer ??= moorRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'themeId': serializer.toJson<int>(themeId),
+      'themeName': serializer.toJson<String>(themeName),
+    };
+  }
+
+  @override
+  ThemePrefsCompanion createCompanion(bool nullToAbsent) {
+    return ThemePrefsCompanion(
+      themeId: themeId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(themeId),
+      themeName: themeName == null && nullToAbsent
+          ? const Value.absent()
+          : Value(themeName),
+    );
+  }
+
+  ThemePref copyWith({int themeId, String themeName}) => ThemePref(
+        themeId: themeId ?? this.themeId,
+        themeName: themeName ?? this.themeName,
+      );
+  @override
+  String toString() {
+    return (StringBuffer('ThemePref(')
+          ..write('themeId: $themeId, ')
+          ..write('themeName: $themeName')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => $mrjf($mrjc(themeId.hashCode, themeName.hashCode));
+  @override
+  bool operator ==(dynamic other) =>
+      identical(this, other) ||
+      (other is ThemePref &&
+          other.themeId == this.themeId &&
+          other.themeName == this.themeName);
+}
+
+class ThemePrefsCompanion extends UpdateCompanion<ThemePref> {
+  final Value<int> themeId;
+  final Value<String> themeName;
+  const ThemePrefsCompanion({
+    this.themeId = const Value.absent(),
+    this.themeName = const Value.absent(),
+  });
+  ThemePrefsCompanion.insert({
+    @required int themeId,
+    @required String themeName,
+  })  : themeId = Value(themeId),
+        themeName = Value(themeName);
+  ThemePrefsCompanion copyWith({Value<int> themeId, Value<String> themeName}) {
+    return ThemePrefsCompanion(
+      themeId: themeId ?? this.themeId,
+      themeName: themeName ?? this.themeName,
+    );
+  }
+}
+
+class $ThemePrefsTable extends ThemePrefs
+    with TableInfo<$ThemePrefsTable, ThemePref> {
+  final GeneratedDatabase _db;
+  final String _alias;
+  $ThemePrefsTable(this._db, [this._alias]);
+  final VerificationMeta _themeIdMeta = const VerificationMeta('themeId');
+  GeneratedIntColumn _themeId;
+  @override
+  GeneratedIntColumn get themeId => _themeId ??= _constructThemeId();
+  GeneratedIntColumn _constructThemeId() {
+    return GeneratedIntColumn(
+      'theme_id',
+      $tableName,
+      false,
+    );
+  }
+
+  final VerificationMeta _themeNameMeta = const VerificationMeta('themeName');
+  GeneratedTextColumn _themeName;
+  @override
+  GeneratedTextColumn get themeName => _themeName ??= _constructThemeName();
+  GeneratedTextColumn _constructThemeName() {
+    return GeneratedTextColumn(
+      'theme_name',
+      $tableName,
+      false,
+    );
+  }
+
+  @override
+  List<GeneratedColumn> get $columns => [themeId, themeName];
+  @override
+  $ThemePrefsTable get asDslTable => this;
+  @override
+  String get $tableName => _alias ?? 'theme_prefs';
+  @override
+  final String actualTableName = 'theme_prefs';
+  @override
+  VerificationContext validateIntegrity(ThemePrefsCompanion d,
+      {bool isInserting = false}) {
+    final context = VerificationContext();
+    if (d.themeId.present) {
+      context.handle(_themeIdMeta,
+          themeId.isAcceptableValue(d.themeId.value, _themeIdMeta));
+    } else if (isInserting) {
+      context.missing(_themeIdMeta);
+    }
+    if (d.themeName.present) {
+      context.handle(_themeNameMeta,
+          themeName.isAcceptableValue(d.themeName.value, _themeNameMeta));
+    } else if (isInserting) {
+      context.missing(_themeNameMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => <GeneratedColumn>{};
+  @override
+  ThemePref map(Map<String, dynamic> data, {String tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
+    return ThemePref.fromData(data, _db, prefix: effectivePrefix);
+  }
+
+  @override
+  Map<String, Variable> entityToSql(ThemePrefsCompanion d) {
+    final map = <String, Variable>{};
+    if (d.themeId.present) {
+      map['theme_id'] = Variable<int, IntType>(d.themeId.value);
+    }
+    if (d.themeName.present) {
+      map['theme_name'] = Variable<String, StringType>(d.themeName.value);
+    }
+    return map;
+  }
+
+  @override
+  $ThemePrefsTable createAlias(String alias) {
+    return $ThemePrefsTable(_db, alias);
+  }
+}
+
+abstract class _$MyDatabase extends GeneratedDatabase {
+  _$MyDatabase(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
+  $ThemePrefsTable _themePrefs;
+  $ThemePrefsTable get themePrefs => _themePrefs ??= $ThemePrefsTable(this);
+  @override
+  Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
+  @override
+  List<DatabaseSchemaEntity> get allSchemaEntities => [themePrefs];
+}
