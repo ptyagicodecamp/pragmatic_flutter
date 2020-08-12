@@ -49,6 +49,7 @@ class _BooksAppState extends State<BooksApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      //Applying theme to the app
       theme: currentTheme == AppThemes.light ? defaultTheme : darkTheme,
       home: Scaffold(
         appBar: AppBar(

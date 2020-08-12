@@ -4,7 +4,7 @@ import '../themes.dart';
 
 part 'theme_prefs.g.dart';
 
-// this will generate a table called "theme_prefs" for us. The rows of that table will
+// It will generate a table called "theme_prefs" for us. The rows of that table will
 // be represented by a class called "ThemePref".
 class ThemePrefs extends Table {
   // AppThemes id

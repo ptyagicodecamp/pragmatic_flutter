@@ -533,7 +533,7 @@ packages:
       name: shelf
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.7.7"
+    version: "0.7.8"
   shelf_web_socket:
     dependency: transitive
     description:

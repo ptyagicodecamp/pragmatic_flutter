@@ -42,11 +42,10 @@ dependencies:
 
   #Moor plugin- Persisting theme selection
   moor: ^3.3.1
+  sqlite3_flutter_libs: ^0.2.0
   # Helper to find the database path on mobile
   path_provider: ^1.6.11
   path: ^1.7.0
-
-  sqlite3_flutter_libs: ^0.2.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -56,7 +55,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  #Generates files using Dart code.
   build_runner: ^1.10.2
+
+  #This generator library turns Table classes from moor into database code.
   moor_generator: ^3.3.1
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
