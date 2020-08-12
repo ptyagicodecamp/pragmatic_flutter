@@ -7,13 +7,6 @@ import 'theme_prefs.dart';
 
 //Uncomment the line below to run from this file
 void main() => runApp(BooksApp());
-//void main() => runApp(
-//      Provider<MyDatabase>(
-//        create: (_) => constructDb(logStatements: true),
-//        dispose: (context, db) => db.close(),
-//        child: BooksApp(),
-//      ),
-//    );
 
 //Showing book listing in ListView
 class BooksApp extends StatefulWidget {
@@ -34,15 +27,18 @@ class _BooksAppState extends State<BooksApp> {
   }
 
   //NEW CODE: Save theme_id in DB
-  void switchTheme(BuildContext context) async {
+  Future<void> switchTheme() async {
     var oldTheme = currentTheme;
 
     currentTheme == AppThemes.light
         ? currentTheme = AppThemes.dark
         : currentTheme = AppThemes.light;
 
+    //check if theme_id entry exists in table already
     var isOldThemeActive = _database.themeIdExists(oldTheme.index);
 
+    //Only active theme id is present in the db.
+    // Remove any existing theme id from DB before adding new entry
     if (isOldThemeActive != null) {
       _database.deactivateTheme(oldTheme.index);
     }
@@ -81,7 +77,7 @@ class _BooksAppState extends State<BooksApp> {
             actions: [
               IconButton(
                 icon: Icon(Icons.all_inclusive),
-                onPressed: () => switchTheme(context),
+                onPressed: () => switchTheme(),
               )
             ]),
         body: BooksListing(),

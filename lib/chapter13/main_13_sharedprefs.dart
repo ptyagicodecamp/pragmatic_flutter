@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'themes.dart';
 
 //Uncomment the line below to run from this file
-//void main() => runApp(BooksApp());
+void main() => runApp(BooksApp());
 
 //Showing book listing in ListView
 class BooksApp extends StatefulWidget {
@@ -17,14 +17,19 @@ class _BooksAppState extends State<BooksApp> {
   AppThemes currentTheme = AppThemes.light;
 
   //NEW CODE: Save theme_id using SharedPreference
-  Future<void> persistTheme(AppThemes theme) async {
+  Future<void> switchTheme() async {
+    currentTheme =
+        currentTheme == AppThemes.light ? AppThemes.dark : AppThemes.light;
+
+    //NEW CODE: save current selection
     var sharedPrefs = await SharedPreferences.getInstance();
-    await sharedPrefs.setInt('theme_id', theme.index);
+    await sharedPrefs.setInt('theme_id', currentTheme.index);
   }
 
   //NEW CODE: Fetching theme_id from SharedPreference
   void loadActiveTheme(BuildContext context) async {
     var sharedPrefs = await SharedPreferences.getInstance();
+    //if theme_id key is null (not found), then set default theme
     int themeId = sharedPrefs.getInt('theme_id') ?? AppThemes.light.index;
 
     setState(() {
@@ -54,12 +59,7 @@ class _BooksAppState extends State<BooksApp> {
                 icon: Icon(Icons.all_inclusive),
                 onPressed: () {
                   setState(() {
-                    currentTheme = currentTheme == AppThemes.light
-                        ? AppThemes.dark
-                        : AppThemes.light;
-
-                    //NEW CODE: save current selection
-                    persistTheme(currentTheme);
+                    switchTheme();
                   });
                 },
               )
