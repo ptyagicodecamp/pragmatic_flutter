@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-//Demonstrating Unit Testing
+//Demonstrating Widget Testing
 void main() {
   runApp(CounterApp());
 }
