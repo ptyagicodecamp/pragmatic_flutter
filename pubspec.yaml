@@ -55,8 +55,16 @@ dependencies:
   font_awesome_flutter: ^8.8.1
 
 dev_dependencies:
+  #Integration Testing
+  flutter_driver:
+    sdk: flutter
+
+  #Widget Testing
   flutter_test:
     sdk: flutter
+
+  #Unit Testing
+  test: ^1.15.3
 
   #Generates files using Dart code.
   build_runner: ^1.10.2
@@ -64,8 +72,7 @@ dev_dependencies:
   #This generator library turns Table classes from moor into database code.
   moor_generator: ^3.3.1
 
-  #unit testing
-  test: ^1.15.3
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
