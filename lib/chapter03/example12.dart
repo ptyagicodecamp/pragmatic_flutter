@@ -1,4 +1,4 @@
-//Example#3. Processing (Adding) Stream using `await for`
+//Processing (Adding) Stream using `await for`
 
 void addNumbersInStream() async {
   //Create a Stream consists of numbers
@@ -21,6 +21,5 @@ Future<int> addEvents(Stream<int> stream) async {
 
 //Entry point function
 void main() {
-  //Run Example#3.
   addNumbersInStream();
 }

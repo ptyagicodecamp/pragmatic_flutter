@@ -19,6 +19,5 @@ void createStreamUsingGenerators() async {
 
 //Entry point function
 void main() {
-  //Run Example#1.
   createStreamUsingGenerators();
 }

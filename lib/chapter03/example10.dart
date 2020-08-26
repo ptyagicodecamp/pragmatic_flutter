@@ -13,6 +13,5 @@ void printStreamEventsUsingListen() {
 
 //Entry point function
 void main() {
-  //Run Example#1.
   printStreamEventsUsingListen();
 }

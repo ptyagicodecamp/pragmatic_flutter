@@ -14,6 +14,5 @@ printStream(Stream stream) {
 
 //Entry point function
 void main() {
-  //Run Example#2.
   createStreamFromIterable();
 }
