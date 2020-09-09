@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'router.dart' as router;
 
-void main() => runApp(FlutterWidgetsExamples());
+void main() => runApp(FlutterLayoutsExamples());
 
-class FlutterWidgetsExamples extends StatelessWidget {
+class FlutterLayoutsExamples extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

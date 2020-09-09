@@ -93,6 +93,8 @@ flutter:
      - assets/book_cover.png
      - lib/chapter08/
      - lib/chapter08/widgets/
+     - lib/chapter09/
+     - lib/chapter09/layouts/
 
   fonts:
     - family: Pangolin

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 //Chapter07: Switching greetings using FAB and StatefulWidget
 
 //Entry point to the app
-//void main() {
-//  runApp(HelloBooksApp());
-//}
+void main() {
+  runApp(HelloBooksApp());
+}
 
 class HelloBooksApp extends StatelessWidget {
   // This widget is the root of your application.

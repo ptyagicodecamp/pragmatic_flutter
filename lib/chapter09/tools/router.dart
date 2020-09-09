@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../layouts/container.dart';
 import '../layouts/listbody.dart';
 import 'codefile.dart';
 import 'home.dart';
@@ -9,6 +10,7 @@ import 'unknown.dart';
 const String HOME = '/';
 const SHOW_CODE_FILE = 'SHOW_CODE_FILE';
 const ALERT_DIALOG = 'ALERT_DIALOG';
+const CONTAINER = 'CONTAINER';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
   print(routeSettings.name);
@@ -21,6 +23,10 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
     case ALERT_DIALOG:
       return MaterialPageRoute(builder: (context) => AlertDialogDemo());
       break;
+    case CONTAINER:
+      return MaterialPageRoute(builder: (context) => MyContainer());
+      break;
+
     case SHOW_CODE_FILE:
       final ScreenArguments screenArgs = routeSettings.arguments;
 
