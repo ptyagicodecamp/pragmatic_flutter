@@ -94,7 +94,8 @@ flutter:
      - lib/chapter08/
      - lib/chapter08/widgets/
      - lib/chapter09/
-     - lib/chapter09/layouts/
+     - lib/chapter09/layouts/single/
+     - lib/chapter09/layouts/multi/
 
   fonts:
     - family: Pangolin

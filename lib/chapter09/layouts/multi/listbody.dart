@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'shared.dart';
+import '../shared.dart';
 
 //Demonstrating AlertDialog Widget
-//void main() => runApp(AlertDialogDemo());
+void main() => runApp(AlertDialogDemo());
 
 class AlertDialogDemo extends StatelessWidget {
   @override

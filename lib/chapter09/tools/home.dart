@@ -4,32 +4,43 @@ import 'recipes.dart';
 import 'router.dart' as router;
 
 final List<RecipeWidget> recipes = [
-  //ListBody widget (Need a parent like AlertDialog)
+  ///Container layout widget
+  RecipeWidget(
+    title: "Container",
+    description:
+        "Can apply style to its child widget to change the background color or shape and size",
+    pageName: router.CONTAINER,
+    codeFilePath: "lib/chapter09/layouts/single/container.dart",
+    codeGithubPath: "",
+    children: [
+      // RecipeWidget(
+      //   title: 'color',
+      //   description: "Color property",
+      //   pageName: router.CONTAINER,
+      //   codeFilePath: "",
+      //   codeGithubPath: "",
+      //   children: [],
+      // )
+    ],
+  ),
+
+  RecipeWidget(
+    title: "Padding",
+    description: "Padding insets its child as per the given padding.",
+    pageName: router.CONTAINER,
+    codeFilePath: "lib/chapter09/layouts/single/padding.dart",
+    codeGithubPath: "",
+    children: [],
+  ),
+
+  ///ListBody widget (Need a parent like AlertDialog)
   RecipeWidget(
       title: "ListBody",
       description: "Added as child to AlertDialog",
       pageName: router.ALERT_DIALOG,
-      codeFilePath: "lib/chapter09/layouts/listbody.dart",
+      codeFilePath: "lib/chapter09/layouts/multi/listbody.dart",
       codeGithubPath: "",
       children: []),
-
-  //Container layout widget
-  RecipeWidget(
-      title: "Container",
-      description: "",
-      pageName: router.CONTAINER,
-      codeFilePath: "lib/chapter09/layouts/container.dart",
-      codeGithubPath: "",
-      children: [
-        RecipeWidget(
-          title: 'color',
-          description: "Color property",
-          pageName: router.CONTAINER,
-          codeFilePath: "",
-          codeGithubPath: "",
-          children: [],
-        )
-      ]),
 ];
 
 class Home extends StatefulWidget {
