@@ -33,6 +33,16 @@ final List<RecipeWidget> recipes = [
     children: [],
   ),
 
+  RecipeWidget(
+    title: "ConstrainedBox",
+    description:
+        "This layout widget puts additional constraints on its child. ",
+    pageName: router.CONTAINER,
+    codeFilePath: "lib/chapter09/layouts/single/constrained_box.dart",
+    codeGithubPath: "",
+    children: [],
+  ),
+
   ///ListBody widget (Need a parent like AlertDialog)
   RecipeWidget(
       title: "ListBody",

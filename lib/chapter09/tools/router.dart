@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pragmatic_flutter/chapter09/layouts/single/padding.dart';
 
+import '../../chapter09/layouts/single/constrained_box.dart';
+import '../../chapter09/layouts/single/padding.dart';
 import '../layouts/multi/listbody.dart';
 import '../layouts/single/container.dart';
 import 'codefile.dart';
@@ -13,6 +14,7 @@ const SHOW_CODE_FILE = 'SHOW_CODE_FILE';
 const ALERT_DIALOG = 'ALERT_DIALOG';
 const CONTAINER = 'CONTAINER';
 const PADDING = 'PADDING';
+const CONSTRAINED_BOX = "constrained_box";
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
   print(routeSettings.name);
@@ -22,8 +24,12 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
       return MaterialPageRoute(builder: (context) => Home());
       break;
 
+    case CONSTRAINED_BOX:
+      return MaterialPageRoute(builder: (context) => ConstrainedBoxDemo());
+      break;
+
     case PADDING:
-      return MaterialPageRoute(builder: (context) => MyPadding());
+      return MaterialPageRoute(builder: (context) => PaddingDemo());
       break;
 
     case ALERT_DIALOG:
