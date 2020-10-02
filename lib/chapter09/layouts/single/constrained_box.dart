@@ -9,14 +9,14 @@ class ConstrainedBoxDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyPadding(),
+      home: MyConstraintBox(),
     );
   }
 }
 
-class MyPadding extends StatefulWidget {
+class MyConstraintBox extends StatefulWidget {
   @override
-  _MyPaddingState createState() => _MyPaddingState();
+  _MyConstraintBoxState createState() => _MyConstraintBoxState();
 }
 
 int minConstraint = 0;
@@ -29,9 +29,9 @@ Map<int, String> dropdown = {
   looseConstraint: 'Loose',
 };
 
-class _MyPaddingState extends State<MyPadding> {
+class _MyConstraintBoxState extends State<MyConstraintBox> {
   @override
-  void didUpdateWidget(MyPadding oldWidget) {
+  void didUpdateWidget(MyConstraintBox oldWidget) {
     super.didUpdateWidget(oldWidget);
   }
 
