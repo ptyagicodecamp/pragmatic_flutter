@@ -4,13 +4,30 @@ import 'recipes.dart';
 import 'router.dart' as router;
 
 final List<RecipeWidget> recipes = [
-  ///Container layout widget
   RecipeWidget(
     title: "FittedBox",
     description:
         "FittedBox fits it child with in the given space during layout to avoid overflows.",
     pageName: router.FITTED_BOX,
     codeFilePath: "lib/chapter10/layouts/fitted_box.dart",
+    codeGithubPath: "",
+    children: [],
+  ),
+  RecipeWidget(
+    title: "Expanded",
+    description:
+        "Expanded widget allows child of Row, Column, or Flex widgets expand to fill the available space along the main axis of parent widget.",
+    pageName: router.EXPANDED,
+    codeFilePath: "lib/chapter10/layouts/expanded.dart",
+    codeGithubPath: "",
+    children: [],
+  ),
+  RecipeWidget(
+    title: "Flexible",
+    description:
+        "Expanded widget allows child of Row, Column, or Flex widgets expand to fill the available space along the main axis of parent widget.",
+    pageName: router.FLEXIBLE,
+    codeFilePath: "lib/chapter10/layouts/flexible.dart",
     codeGithubPath: "",
     children: [],
   ),

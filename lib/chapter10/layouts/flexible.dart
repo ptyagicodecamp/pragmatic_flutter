@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// Flexible widget controls how child of Row, Column,
+/// or Flex widgets flexes.
 void main() => runApp(FlexibleDemo());
 
 class FlexibleDemo extends StatelessWidget {

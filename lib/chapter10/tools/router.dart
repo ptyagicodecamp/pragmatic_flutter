@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pragmatic_flutter/chapter10/layouts/expanded.dart';
 import 'package:pragmatic_flutter/chapter10/layouts/fitted_box.dart';
+import 'package:pragmatic_flutter/chapter10/layouts/flexible.dart';
 
 import 'codefile.dart';
 import 'home.dart';
@@ -10,6 +12,8 @@ const String HOME = '/';
 const SHOW_CODE_FILE = 'SHOW_CODE_FILE';
 
 const FITTED_BOX = 'FITTED_BOX';
+const EXPANDED = 'EXPANDED';
+const FLEXIBLE = 'FLEXIBLE';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
   print(routeSettings.name);
@@ -17,6 +21,14 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
   switch (routeSettings.name) {
     case HOME:
       return MaterialPageRoute(builder: (context) => Home());
+      break;
+
+    case EXPANDED:
+      return MaterialPageRoute(builder: (context) => ExpandedDemo());
+      break;
+
+    case FLEXIBLE:
+      return MaterialPageRoute(builder: (context) => FlexibleDemo());
       break;
 
     case FITTED_BOX:

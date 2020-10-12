@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// Expanded widget allows child of Row, Column,
+/// or Flex widgets expand to fill the available space along
+/// the main axis of parent widget.
 void main() => runApp(ExpandedDemo());
 
 class ExpandedDemo extends StatelessWidget {
