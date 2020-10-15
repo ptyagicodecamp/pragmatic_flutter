@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// Single child layout widget
+
 /// Expanded widget allows child of Row, Column,
 /// or Flex widgets expand to fill the available space along
 /// the main axis of parent widget.

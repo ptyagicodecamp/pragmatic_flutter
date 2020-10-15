@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:pragmatic_flutter/chapter10/layouts/expanded.dart';
 import 'package:pragmatic_flutter/chapter10/layouts/fitted_box.dart';
 import 'package:pragmatic_flutter/chapter10/layouts/flexible.dart';
+import 'package:pragmatic_flutter/chapter10/layouts/fractionally_sized_box.dart';
+import 'package:pragmatic_flutter/chapter10/layouts/layoutbuilder.dart';
+import 'package:pragmatic_flutter/chapter10/layouts/wrap.dart';
 
 import 'codefile.dart';
 import 'home.dart';
@@ -14,6 +17,9 @@ const SHOW_CODE_FILE = 'SHOW_CODE_FILE';
 const FITTED_BOX = 'FITTED_BOX';
 const EXPANDED = 'EXPANDED';
 const FLEXIBLE = 'FLEXIBLE';
+const FRACTIONALLY_SIZED_BOX = 'FRACTIONALLY_SIZED_BOX';
+const LAYOUT_BUILDER = 'LAYOUT_BUILDER';
+const WRAP = 'WRAP';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
   print(routeSettings.name);
@@ -33,6 +39,18 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
 
     case FITTED_BOX:
       return MaterialPageRoute(builder: (context) => FittedBoxDemo());
+      break;
+
+    case FRACTIONALLY_SIZED_BOX:
+      return MaterialPageRoute(
+          builder: (context) => FractionallySizedBoxDemo());
+      break;
+
+    case LAYOUT_BUILDER:
+      return MaterialPageRoute(builder: (context) => LayoutBuilderDemo());
+      break;
+    case WRAP:
+      return MaterialPageRoute(builder: (context) => WrapDemo());
       break;
 
     case SHOW_CODE_FILE:

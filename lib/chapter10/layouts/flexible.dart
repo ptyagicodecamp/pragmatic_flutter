@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Single child layout widget
 /// Flexible widget controls how child of Row, Column,
 /// or Flex widgets flexes.
 void main() => runApp(FlexibleDemo());

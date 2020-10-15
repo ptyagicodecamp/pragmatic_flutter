@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Single child layout widget
 /// FittedBox fits it child with in the given space during layout to avoid overflows.
 void main() => runApp(FittedBoxDemo());
 

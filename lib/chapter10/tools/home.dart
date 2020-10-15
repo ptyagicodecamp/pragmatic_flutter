@@ -31,6 +31,32 @@ final List<RecipeWidget> recipes = [
     codeGithubPath: "",
     children: [],
   ),
+  RecipeWidget(
+    title: "FractionallySizedBox",
+    description: "Sizes its child to a fraction of total available space.",
+    pageName: router.FRACTIONALLY_SIZED_BOX,
+    codeFilePath: "lib/chapter10/layouts/fractionally_sized_box.dart",
+    codeGithubPath: "",
+    children: [],
+  ),
+  RecipeWidget(
+    title: "LayoutBuilder",
+    description:
+        "LayoutBuilder builds widgets dynamically as per the constraint passed by the parent.",
+    pageName: router.LAYOUT_BUILDER,
+    codeFilePath: "lib/chapter10/layouts/layoutbuilder.dart",
+    codeGithubPath: "",
+    children: [],
+  ),
+  RecipeWidget(
+    title: "Wrap",
+    description:
+        "Wrap widget is helpful when Row and Column widgets run out of room.",
+    pageName: router.WRAP,
+    codeFilePath: "lib/chapter10/layouts/wrap.dart",
+    codeGithubPath: "",
+    children: [],
+  ),
 ];
 
 class Home extends StatefulWidget {
