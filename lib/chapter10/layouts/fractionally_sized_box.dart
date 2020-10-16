@@ -31,18 +31,21 @@ class MyFractionallySizedBox extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(),
           ),
-          child: FractionallySizedBox(
-            alignment: Alignment.center,
-            widthFactor: 0.8,
-            heightFactor: 0.2,
-            child: RaisedButton(
-              child: Text(
-                "Tap",
-                style: TextStyle(
-                  fontSize: 20,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: FractionallySizedBox(
+              alignment: Alignment.bottomCenter,
+              widthFactor: 0.8,
+              heightFactor: 0.2,
+              child: RaisedButton(
+                child: Text(
+                  "Tap",
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
                 ),
+                onPressed: () {},
               ),
-              onPressed: () {},
             ),
           ),
         ),

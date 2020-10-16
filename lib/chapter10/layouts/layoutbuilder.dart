@@ -22,13 +22,15 @@ class MyLayoutBuilder extends StatelessWidget {
         title: Text("LayoutBuilder Widget"),
       ),
       //LayoutBuilder Widget Usage
-      body: LayoutBuilder(builder: (context, constraints) {
-        if (constraints.maxWidth > 400) {
-          return largeScreen();
-        } else {
-          return smallScreen();
-        }
-      }),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          if (constraints.maxWidth > 400) {
+            return largeScreen();
+          } else {
+            return smallScreen();
+          }
+        },
+      ),
     );
   }
 
