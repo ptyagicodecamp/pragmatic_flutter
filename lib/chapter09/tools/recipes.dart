@@ -10,6 +10,7 @@ class RecipeWidget extends StatelessWidget {
   final String codeFilePath;
   final String codeGithubPath;
   final List<RecipeWidget> children;
+  final Color listTileColor;
 
   RecipeWidget(
       {this.title,
@@ -17,6 +18,7 @@ class RecipeWidget extends StatelessWidget {
       this.pageName,
       this.codeFilePath,
       this.codeGithubPath,
+      this.listTileColor,
       this.children});
 
   @override
@@ -24,6 +26,7 @@ class RecipeWidget extends StatelessWidget {
     return Card(
       color: Colors.grey[100],
       child: ListTile(
+        tileColor: this.listTileColor ?? Colors.white,
         isThreeLine: true,
         title: Padding(
           padding: EdgeInsets.all(8.0),

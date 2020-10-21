@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'router.dart' as router;
 
-// void main() => runApp(FlutterLayoutsExamples());
+void main() => runApp(FlutterLayoutsExamples());
 
 class FlutterLayoutsExamples extends StatelessWidget {
   @override

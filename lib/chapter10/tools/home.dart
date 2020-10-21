@@ -75,7 +75,7 @@ class _HomeState extends State {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chapter 9: Flutter Layouts'),
+        title: Text('Chapter10: Responsive Layouts'),
       ),
       body: ListView.builder(
           itemCount: recipes.length,
