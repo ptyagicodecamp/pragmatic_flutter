@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:pragmatic_flutter/chapter09/layouts/multi/column.dart';
+import 'package:pragmatic_flutter/chapter09/layouts/multi/grid_view.dart';
 import 'package:pragmatic_flutter/chapter09/layouts/multi/indexed_stack.dart';
+import 'package:pragmatic_flutter/chapter09/layouts/multi/listview.dart';
+import 'package:pragmatic_flutter/chapter09/layouts/multi/row.dart';
 import 'package:pragmatic_flutter/chapter09/layouts/multi/stack.dart';
+import 'package:pragmatic_flutter/chapter09/layouts/multi/table.dart';
 
 import '../../chapter09/layouts/single/constrained_box.dart';
 import '../../chapter09/layouts/single/padding.dart';
@@ -18,19 +23,16 @@ const PADDING = 'PADDING';
 const CONSTRAINED_BOX = "constrained_box";
 const INTRINSIC_HEIGHT = 'INTRINSIC_HEIGHT';
 const INTRINSIC_WEIGHT = 'INTRINSIC_WEIGHT';
-const LIMITED_BOX = 'LIMITED_BOX';
-const OVERFLOW_BOX = 'OVERFLOW_BOX';
-const SIZED_BOX = 'SIZED_BOX';
-const SIZED_OVERFLOW_BOX = 'SIZED_OVERFLOW_BOX';
 
-const LIST_VIEW = 'LIST_VIEW';
+const SIZED_BOX = 'SIZED_BOX';
+
 const ROW = 'ROW';
 const COLUMN = 'COLUMN';
+const LIST_VIEW = 'LIST_VIEW';
+const GRID_VIEW = 'GRID_VIEW';
+const TABLE = 'TABLE';
 const STACK = 'STACK';
 const INDEXED_STACK = 'INDEXED_STACK';
-const FLOW = 'FLOW';
-const TABLE = 'TABLE';
-const GRID_VIEW = 'GRID_VIEW';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
   print(routeSettings.name);
@@ -50,6 +52,26 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
 
     case CONTAINER:
       return MaterialPageRoute(builder: (context) => MyContainer());
+      break;
+
+    case ROW:
+      return MaterialPageRoute(builder: (context) => RowDemo());
+      break;
+
+    case COLUMN:
+      return MaterialPageRoute(builder: (context) => ColumnDemo());
+      break;
+
+    case LIST_VIEW:
+      return MaterialPageRoute(builder: (context) => ListViewDemo());
+      break;
+
+    case GRID_VIEW:
+      return MaterialPageRoute(builder: (context) => GridViewDemo());
+      break;
+
+    case TABLE:
+      return MaterialPageRoute(builder: (context) => TableDemo());
       break;
 
     case STACK:

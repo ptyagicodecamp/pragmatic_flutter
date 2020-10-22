@@ -57,24 +57,7 @@ final List<RecipeWidget> recipes = [
     codeGithubPath: "",
     children: [],
   ),
-  RecipeWidget(
-    title: "LimitedBox",
-    description: "LimitedBox is a single-child layout widget. ",
-    listTileColor: Colors.deepPurpleAccent,
-    pageName: router.LIMITED_BOX,
-    codeFilePath: "lib/chapter09/layouts/single/limited_box.dart",
-    codeGithubPath: "",
-    children: [],
-  ),
-  RecipeWidget(
-    title: "OverflowBox",
-    description: "OverflowBox is a single-child layout widget. ",
-    listTileColor: Colors.deepPurpleAccent,
-    pageName: router.OVERFLOW_BOX,
-    codeFilePath: "lib/chapter09/layouts/single/overflow_box.dart",
-    codeGithubPath: "",
-    children: [],
-  ),
+
   RecipeWidget(
     title: "SizedBox",
     description: "SizedBox is a single-child layout widget. ",
@@ -84,20 +67,12 @@ final List<RecipeWidget> recipes = [
     codeGithubPath: "",
     children: [],
   ),
-  RecipeWidget(
-    title: "SizedOverflowBox",
-    description: "SizedOverflowBox is a single-child layout widget. ",
-    listTileColor: Colors.deepPurpleAccent,
-    pageName: router.SIZED_OVERFLOW_BOX,
-    codeFilePath: "lib/chapter09/layouts/single/sized_overflow_box.dart",
-    codeGithubPath: "",
-    children: [],
-  ),
 
   /// Multi-child layout widgets. LightGreen background to group.
   RecipeWidget(
     title: "Row",
-    description: "Row is a multi-child layout widget. ",
+    description:
+        "Row is a multi-child layout widget. It arranges its children horizontally",
     listTileColor: Colors.lightGreen,
     pageName: router.ROW,
     codeFilePath: "lib/chapter09/layouts/multi/row.dart",
@@ -106,7 +81,8 @@ final List<RecipeWidget> recipes = [
   ),
   RecipeWidget(
     title: "Column",
-    description: "Column is a multi-child layout widget. ",
+    description:
+        "Column is a multi-child layout widget. It arranges its children vertically",
     listTileColor: Colors.lightGreen,
     pageName: router.COLUMN,
     codeFilePath: "lib/chapter09/layouts/multi/column.dart",
@@ -131,15 +107,7 @@ final List<RecipeWidget> recipes = [
     codeGithubPath: "",
     children: [],
   ),
-  RecipeWidget(
-    title: "Flow",
-    description: "Flow is a multi-child layout widget.",
-    listTileColor: Colors.lightGreen,
-    pageName: router.FLOW,
-    codeFilePath: "lib/chapter09/layouts/multi/flow.dart",
-    codeGithubPath: "",
-    children: [],
-  ),
+
   RecipeWidget(
     title: "Table",
     description: "Table is a multi-child layout widget.",
