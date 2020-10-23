@@ -6,6 +6,7 @@ import 'package:pragmatic_flutter/chapter09/layouts/multi/listview.dart';
 import 'package:pragmatic_flutter/chapter09/layouts/multi/row.dart';
 import 'package:pragmatic_flutter/chapter09/layouts/multi/stack.dart';
 import 'package:pragmatic_flutter/chapter09/layouts/multi/table.dart';
+import 'package:pragmatic_flutter/chapter09/layouts/single/sized_box.dart';
 
 import '../../chapter09/layouts/single/constrained_box.dart';
 import '../../chapter09/layouts/single/padding.dart';
@@ -52,6 +53,10 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
 
     case CONTAINER:
       return MaterialPageRoute(builder: (context) => MyContainer());
+      break;
+
+    case SIZED_BOX:
+      return MaterialPageRoute(builder: (context) => SizedBoxDemo());
       break;
 
     case ROW:

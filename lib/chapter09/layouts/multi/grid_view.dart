@@ -15,12 +15,7 @@ class GridViewDemo extends StatelessWidget {
   }
 }
 
-class MyGridView extends StatefulWidget {
-  @override
-  _MyGridViewState createState() => _MyGridViewState();
-}
-
-class _MyGridViewState extends State<MyGridView> {
+class MyGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

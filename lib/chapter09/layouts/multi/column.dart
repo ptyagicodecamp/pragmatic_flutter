@@ -15,12 +15,7 @@ class ColumnDemo extends StatelessWidget {
   }
 }
 
-class MyColumn extends StatefulWidget {
-  @override
-  _MyColumnState createState() => _MyColumnState();
-}
-
-class _MyColumnState extends State<MyColumn> {
+class MyColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

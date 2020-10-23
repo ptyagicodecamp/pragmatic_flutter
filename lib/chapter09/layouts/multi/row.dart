@@ -15,12 +15,7 @@ class RowDemo extends StatelessWidget {
   }
 }
 
-class MyRow extends StatefulWidget {
-  @override
-  _MyRowState createState() => _MyRowState();
-}
-
-class _MyRowState extends State<MyRow> {
+class MyRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

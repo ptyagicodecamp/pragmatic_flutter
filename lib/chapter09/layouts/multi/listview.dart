@@ -15,12 +15,7 @@ class ListViewDemo extends StatelessWidget {
   }
 }
 
-class MyListView extends StatefulWidget {
-  @override
-  _MyListViewState createState() => _MyListViewState();
-}
-
-class _MyListViewState extends State<MyListView> {
+class MyListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
