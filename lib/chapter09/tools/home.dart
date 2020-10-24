@@ -41,7 +41,8 @@ final List<RecipeWidget> recipes = [
 
   RecipeWidget(
     title: "IntrinsicHeight",
-    description: "IntrinsicHeight is a single-child layout widget. ",
+    description:
+        "IntrinsicHeight is a single-child layout widget. Expands all the child widgets of Row to the same size of the tallest child widget.",
     listTileColor: Colors.deepPurpleAccent,
     pageName: router.INTRINSIC_HEIGHT,
     codeFilePath: "lib/chapter09/layouts/single/intrinsic_height.dart",
@@ -49,11 +50,12 @@ final List<RecipeWidget> recipes = [
     children: [],
   ),
   RecipeWidget(
-    title: "IntrinsicWeight",
-    description: "IntrinsicWeight is a single-child layout widget. ",
+    title: "IntrinsicWidth",
+    description:
+        "IntrinsicWidth is a single-child layout widget. Expands all the child widgets of Column to the same size of the widest child widget.",
     listTileColor: Colors.deepPurpleAccent,
     pageName: router.INTRINSIC_WEIGHT,
-    codeFilePath: "lib/chapter09/layouts/single/intrinsic_weight.dart",
+    codeFilePath: "lib/chapter09/layouts/single/intrinsic_width.dart",
     codeGithubPath: "",
     children: [],
   ),

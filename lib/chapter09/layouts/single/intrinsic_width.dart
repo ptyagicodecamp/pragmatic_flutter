@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
 
 /// Single-child layout widget
-/// Expands all the child widgets of Row to the same size of the tallest child widget.
-void main() => runApp(IntrinsicHeightDemo());
+/// Expands all the child widgets of Column to the same size of the widest child widget.
+void main() => runApp(IntrinsicWidthDemo());
 
-class IntrinsicHeightDemo extends StatelessWidget {
+class IntrinsicWidthDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyIntrinsicHeight(),
+      home: MyIntrinsicWidth(),
     );
   }
 }
 
-class MyIntrinsicHeight extends StatelessWidget {
+class MyIntrinsicWidth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("IntrinsicHeight Widget"),
+        title: Text("IntrinsicWidth Widget"),
       ),
-      //IntrinsicHeight Widget Usage
-      body: IntrinsicHeight(
-        child: Row(
+      //IntrinsicWidth Widget Usage
+      body: IntrinsicWidth(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             childWidget(0),

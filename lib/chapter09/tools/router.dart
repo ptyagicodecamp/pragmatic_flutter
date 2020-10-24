@@ -6,6 +6,8 @@ import 'package:pragmatic_flutter/chapter09/layouts/multi/listview.dart';
 import 'package:pragmatic_flutter/chapter09/layouts/multi/row.dart';
 import 'package:pragmatic_flutter/chapter09/layouts/multi/stack.dart';
 import 'package:pragmatic_flutter/chapter09/layouts/multi/table.dart';
+import 'package:pragmatic_flutter/chapter09/layouts/single/intrinsic_height.dart';
+import 'package:pragmatic_flutter/chapter09/layouts/single/intrinsic_width.dart';
 import 'package:pragmatic_flutter/chapter09/layouts/single/sized_box.dart';
 
 import '../../chapter09/layouts/single/constrained_box.dart';
@@ -63,8 +65,16 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
       return MaterialPageRoute(builder: (context) => RowDemo());
       break;
 
+    case INTRINSIC_HEIGHT:
+      return MaterialPageRoute(builder: (context) => IntrinsicHeightDemo());
+      break;
+
     case COLUMN:
       return MaterialPageRoute(builder: (context) => ColumnDemo());
+      break;
+
+    case INTRINSIC_WEIGHT:
+      return MaterialPageRoute(builder: (context) => IntrinsicWidthDemo());
       break;
 
     case LIST_VIEW:
