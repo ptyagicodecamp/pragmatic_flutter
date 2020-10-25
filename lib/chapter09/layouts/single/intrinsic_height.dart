@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Single-child layout widget
-/// Expands all the child widgets of Row to the same size of the tallest child widget.
+/// Expands all the child widgets of Row to the same height of the tallest child widget.
 void main() => runApp(IntrinsicHeightDemo());
 
 class IntrinsicHeightDemo extends StatelessWidget {

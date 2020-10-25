@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Single-child layout widget
-/// Expands all the child widgets of Column to the same size of the widest child widget.
+/// Expands all the child widgets of Column to the same width of the widest child widget.
 void main() => runApp(IntrinsicWidthDemo());
 
 class IntrinsicWidthDemo extends StatelessWidget {
