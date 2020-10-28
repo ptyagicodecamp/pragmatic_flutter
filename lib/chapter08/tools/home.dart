@@ -4,12 +4,72 @@ import 'recipes.dart';
 import 'router.dart' as router;
 
 final List<RecipeWidget> recipes = [
-  ///Card layout widget
+  /// Image widget
   RecipeWidget(
-    title: "Card",
-    description: "",
-    pageName: router.CARD,
-    codeFilePath: "lib/chapter08/widgets/card.dart",
+    title: "Image",
+    description: "Loading images using `Image` widget.",
+    pageName: router.IMAGE,
+    codeFilePath: "lib/chapter08/widgets/image_widget.dart",
+    codeGithubPath: "",
+    children: [],
+  ),
+
+  /// ToggleButtons
+  RecipeWidget(
+    title: "ToggleButtons",
+    description: "Horizontal toggle buttons.",
+    pageName: router.TOGGLE_BUTTONS,
+    codeFilePath: "lib/chapter08/widgets/togglebuttons_widget.dart",
+    codeGithubPath: "",
+    children: [],
+  ),
+
+  /// TextField
+  RecipeWidget(
+    title: "TextField",
+    description: "TextField widget let users input text data in the app.",
+    pageName: router.TEXT_FIELD,
+    codeFilePath: "lib/chapter08/widgets/textfield.dart",
+    codeGithubPath: "",
+    children: [],
+  ),
+
+  /// FutureBuilder
+  RecipeWidget(
+    title: "FutureBuilder",
+    description: "FutureBuilder",
+    pageName: router.FUTURE_BUILDER,
+    codeFilePath: "lib/chapter08/widgets/futurebuilder_widget.dart",
+    codeGithubPath: "",
+    children: [],
+  ),
+
+  /// Placeholder
+  RecipeWidget(
+    title: "Placeholder",
+    description: "Placeholder",
+    pageName: router.PLACEHOLDER,
+    codeFilePath: "lib/chapter08/widgets/placeholder_widget.dart",
+    codeGithubPath: "",
+    children: [],
+  ),
+
+  /// StreamBuilder
+  RecipeWidget(
+    title: "StreamBuilder",
+    description: "StreamBuilder",
+    pageName: router.STREAM_BUILDER,
+    codeFilePath: "lib/chapter08/widgets/streambuilder_widget.dart",
+    codeGithubPath: "",
+    children: [],
+  ),
+
+  /// AlertDialog
+  RecipeWidget(
+    title: "AlertDialog",
+    description: "AlertDialog widget in Material and Cupertino styles",
+    pageName: router.ALERT_DIALOG,
+    codeFilePath: "lib/chapter08/widgets/alert_dialog.dart",
     codeGithubPath: "",
     children: [],
   ),
