@@ -37,7 +37,8 @@ final List<RecipeWidget> recipes = [
   /// FutureBuilder
   RecipeWidget(
     title: "FutureBuilder",
-    description: "FutureBuilder",
+    description:
+        "The `FutureBuilder` is a widget that builds itself based on the snapshot returned from the `Future` class.",
     pageName: router.FUTURE_BUILDER,
     codeFilePath: "lib/chapter08/widgets/futurebuilder_widget.dart",
     codeGithubPath: "",
@@ -47,7 +48,8 @@ final List<RecipeWidget> recipes = [
   /// Placeholder
   RecipeWidget(
     title: "Placeholder",
-    description: "Placeholder",
+    description:
+        "Placeholder widget draws a box that indicates that a new widget will be added at some point in future.",
     pageName: router.PLACEHOLDER,
     codeFilePath: "lib/chapter08/widgets/placeholder_widget.dart",
     codeGithubPath: "",
@@ -57,7 +59,8 @@ final List<RecipeWidget> recipes = [
   /// StreamBuilder
   RecipeWidget(
     title: "StreamBuilder",
-    description: "StreamBuilder",
+    description:
+        "The StreamBuilder is a widget that builds itself based on the asynchronous data events.",
     pageName: router.STREAM_BUILDER,
     codeFilePath: "lib/chapter08/widgets/streambuilder_widget.dart",
     codeGithubPath: "",

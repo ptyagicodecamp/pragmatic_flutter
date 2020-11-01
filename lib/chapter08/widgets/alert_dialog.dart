@@ -1,6 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'reusable_widgets.dart';
 
 /// AlertDialog Widget
 void main() => runApp(AlertDialogDemo());
@@ -32,13 +31,13 @@ class _MyAlertDialogState extends State<MyAlertDialog> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            RaisedButton(
+            ElevatedButton(
               child: Text("Material"),
               onPressed: () {
                 _showMaterialDialog(context);
               },
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Cupertino"),
               onPressed: () {
                 _showCupertinoDialog(context);
@@ -55,8 +54,24 @@ class _MyAlertDialogState extends State<MyAlertDialog> {
         context: context,
         barrierDismissible: false,
         builder: (BuildContext context) {
-          return materialAlertDialog(
-              context, "Material", "I'm Material AlertDialog Widget.");
+          return AlertDialog(
+            title: Text("Material"),
+            content: Text("I'm Material AlertDialog Widget."),
+            actions: <Widget>[
+              TextButton(
+                child: Text('Cancel'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              TextButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
         });
   }
 
@@ -65,8 +80,20 @@ class _MyAlertDialogState extends State<MyAlertDialog> {
         context: context,
         barrierDismissible: false,
         builder: (BuildContext context) {
-          return materialAlertDialog(
-              context, "Cupertino", "I'm Cupertino (iOS) AlertDialog Widget.");
+          return CupertinoAlertDialog(
+            title: Text("Cupertino"),
+            content: Text("I'm Cupertino (iOS) AlertDialog Widget."),
+            actions: <Widget>[
+              TextButton(
+                child: Text('Cancel'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+              TextButton(
+                child: Text('OK'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+            ],
+          );
         });
   }
 }

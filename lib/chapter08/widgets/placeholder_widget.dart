@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-///
+/// Placeholder widget draws a box that indicates that a new widget will be added at some point in future.
 void main() => runApp(PlaceholderDemo());
 
 class PlaceholderDemo extends StatelessWidget {
@@ -24,9 +24,6 @@ class _MyPlaceholderWidgetState extends State<MyPlaceholderWidget> {
   Future<String> _futureData = Future<String>.delayed(
       Duration(seconds: 3), () => 'assets/flutter_icon.png');
 
-  Future<String> _futureError = Future<String>.delayed(
-      Duration(seconds: 3), () => throw ("This is error message"));
-
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -41,10 +38,6 @@ class _MyPlaceholderWidgetState extends State<MyPlaceholderWidget> {
             if (snapshot.hasData) {
               //success
               futureChild = Image.asset(snapshot.data);
-            } else if (snapshot.hasError) {
-              //show error message
-              futureChild =
-                  Text("Error occurred fetching data [${snapshot.error}]");
             } else {
               //Placeholder widget while waiting for data to arrive
               futureChild = Container(

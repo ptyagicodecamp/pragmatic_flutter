@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Flutter TextField Widget.
-/// Let app users enter text data.
+/// Let users enter text data.
 void main() => runApp(TextFieldDemo());
 
 class TextFieldDemo extends StatelessWidget {

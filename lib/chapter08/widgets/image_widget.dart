@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-///
+/// Flutter `Image` Widget.
+/// Displaying image from local assets folder and URL.
 void main() => runApp(ImageWidgetDemo());
 
 class ImageWidgetDemo extends StatelessWidget {
@@ -39,10 +40,12 @@ class _MyImageWidgetState extends State<MyImageWidget> {
     );
   }
 
+  /// Displaying image from local assets folder.
   Widget loadLocalImage() {
     return Image.asset("assets/flutter_icon.png");
   }
 
+  /// Displaying image from URL.
   Widget loadInternetImage() {
     return Image.network(
         "https://github.com/ptyagicodecamp/flutter_cookbook2/raw/master/assets/flutter_icon.png");

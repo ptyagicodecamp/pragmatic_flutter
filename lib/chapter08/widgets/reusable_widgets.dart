@@ -6,13 +6,13 @@ Widget materialAlertDialog(BuildContext context, String title, String content) {
     title: Text(title),
     content: Text(content),
     actions: <Widget>[
-      FlatButton(
+      TextButton(
         child: Text('Cancel'),
         onPressed: () {
           Navigator.of(context).pop();
         },
       ),
-      FlatButton(
+      TextButton(
         child: Text('OK'),
         onPressed: () {
           Navigator.of(context).pop();
@@ -29,15 +29,14 @@ Widget cupertinoAlertDialog(
     title: Text(title),
     content: Text(content),
     actions: <Widget>[
-      FlatButton(
+      TextButton(
         child: Text('Cancel'),
         onPressed: () => Navigator.of(context).pop(),
       ),
-      FlatButton(
+      TextButton(
         child: Text('OK'),
         onPressed: () => Navigator.of(context).pop(),
       ),
     ],
   );
-  ;
 }
