@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//Chapter07: Adding 'Hello Books' text in the center of the screen
+//Chapter05: Adding 'Hello Books' text in the center of the screen
 //Scaffold + AppBar + Center + FloatingActionButton
 //void main() {
 //  runApp(HelloBooksApp());

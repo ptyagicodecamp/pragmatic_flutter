@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 
-//Chapter06: Project Structure of hello_books project
-//void main() {
-//  runApp(MyApp());
-//}
+//Chapter05: Switching greetings using FAB and StatefulWidget
 
-class MyApp extends StatelessWidget {
+//Entry point to the app
+void main() {
+  runApp(HelloBooksApp());
+}
+
+class HelloBooksApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
       home: MyHomePage(title: 'Hello Books'),
     );
   }

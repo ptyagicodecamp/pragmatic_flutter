@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
-//Chapter05: Test app for demonstrating Setting up development Environment for
+// TODO : Add reference to independent project
+//Chapter03: Setting Up Environment
+// Test app for demonstrating Setting up development Environment for
 //Android, iOS, Web, Desktop (macOS & Linux).
 //macOS and Linux can only be run on their respective operating systems.
 //void main() {

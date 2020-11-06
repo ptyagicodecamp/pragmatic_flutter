@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-//Chapter07: Adding 'Hello Books' text in the center of the screen
-//NO SafeArea
+//Chapter05: Adding 'Hello Books' text in the center of the screen
+//With SafeArea
 //void main() {
 //  runApp(HelloBooksApp());
 //}
@@ -12,8 +12,9 @@ class HelloBooksApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      //Text Widget without SafeArea
-      home: Text('Hello Books'),
+      home: SafeArea(
+        child: Text('Hello Books'),
+      ),
     );
   }
 }
