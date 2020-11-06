@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pragmatic_flutter/chapter10/layouts/expanded.dart';
-import 'package:pragmatic_flutter/chapter10/layouts/fitted_box.dart';
-import 'package:pragmatic_flutter/chapter10/layouts/flexible.dart';
-import 'package:pragmatic_flutter/chapter10/layouts/fractionally_sized_box.dart';
-import 'package:pragmatic_flutter/chapter10/layouts/layoutbuilder.dart';
-import 'package:pragmatic_flutter/chapter10/layouts/wrap.dart';
 
+import '../layouts/expanded.dart';
+import '../layouts/fitted_box.dart';
+import '../layouts/flexible.dart';
+import '../layouts/fractionally_sized_box.dart';
+import '../layouts/layoutbuilder.dart';
+import '../layouts/wrap.dart';
 import 'codefile.dart';
 import 'home.dart';
 import 'screen_args.dart';
