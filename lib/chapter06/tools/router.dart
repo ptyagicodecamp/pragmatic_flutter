@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:pragmatic_flutter/chapter08/widgets/alert_dialog.dart';
-import 'package:pragmatic_flutter/chapter08/widgets/futurebuilder_widget.dart';
-import 'package:pragmatic_flutter/chapter08/widgets/image_widget.dart';
-import 'package:pragmatic_flutter/chapter08/widgets/placeholder_widget.dart';
-import 'package:pragmatic_flutter/chapter08/widgets/streambuilder_widget.dart';
-import 'package:pragmatic_flutter/chapter08/widgets/textfield.dart';
-import 'package:pragmatic_flutter/chapter08/widgets/togglebuttons_widget.dart';
 
+import '../widgets/alert_dialog.dart';
+import '../widgets/futurebuilder_widget.dart';
+import '../widgets/image_widget.dart';
+import '../widgets/placeholder_widget.dart';
+import '../widgets/streambuilder_widget.dart';
+import '../widgets/textfield.dart';
+import '../widgets/togglebuttons_widget.dart';
 import 'codefile.dart';
 import 'home.dart';
 import 'screen_args.dart';
