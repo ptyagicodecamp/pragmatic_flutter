@@ -1,4 +1,4 @@
-//importing the Dart package 
+//importing the Dart package
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -9,26 +9,19 @@ import 'book.dart';
 import 'book_details_page.dart';
 import 'booktile.dart';
 
+/// Chapter14: Navigation & Routing
+///
 //Uncomment the line below to run from this file
 //void main() => runApp(BooksApp());
 
-//The booksListing data is available global to app
-List<BookModel> booksListing;
-
+//Showing book listing in ListView
 class BooksApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //Using Static Navigation (Named Routing)
+    //Using Direct Navigation (un-named routing)
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      //home: BooksListing(),
-      //Named-Routing using Map routing-table
-      routes: <String, WidgetBuilder>{
-        '/': (BuildContext context) => BooksListing(),
-        '/details': (BuildContext context) => BookDetailsPage(
-          book: booksListing[0],
-        ),
-      },
+      home: BooksListing(),
     );
   }
 }
@@ -38,9 +31,10 @@ class BooksApp extends StatelessWidget {
 Future<List<BookModel>> makeHttpCall() async {
   //API Key: To be replaced with your key
   final apiKey = "$YOUR_API_KEY";
-  final apiEndpoint =  "https://www.googleapis.com/books/v1/volumes?key=$apiKey&q=python+coding";
+  final apiEndpoint =
+      "https://www.googleapis.com/books/v1/volumes?key=$apiKey&q=python+coding";
   final http.Response response =
-  await http.get(apiEndpoint, headers: {'Accept': 'application/json'});
+      await http.get(apiEndpoint, headers: {'Accept': 'application/json'});
 
   //Parsing API's HttpResponse to JSON format
   //Converting string response body to JSON representation
@@ -57,7 +51,7 @@ class BooksListing extends StatefulWidget {
 }
 
 class _BooksListingState extends State<BooksListing> {
-
+  List<BookModel> booksListing;
   fetchBooks() async {
     var response = await makeHttpCall();
 
@@ -83,13 +77,16 @@ class _BooksListingState extends State<BooksListing> {
         itemBuilder: (context, index) {
           //Passing bookModelObj to BookTile widget
           return GestureDetector(
-            child: BookTile(bookModelObj: booksListing[index]),
-            onTap: () =>
-                Navigator.pushNamed(context, '/details')
-          );
+              child: BookTile(bookModelObj: booksListing[index]),
+              onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => BookDetailsPage(
+                        book: booksListing[index],
+                      ),
+                    ),
+                  ));
         },
       ),
     );
   }
 }
-

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// Chapter19: BLoC Pattern
 //void main() {
 //  runApp(CounterApp());
 //}

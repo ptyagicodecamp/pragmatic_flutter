@@ -2,6 +2,7 @@
 //Global theme demonstration
 import 'package:flutter/material.dart';
 
+/// Chapter10: Flutter Themes
 //Uncomment the line below to run from this file
 //void main() => runApp(BooksApp());
 

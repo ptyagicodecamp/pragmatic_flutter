@@ -3,6 +3,8 @@ import 'package:http/http.dart' as http;
 
 import '../config.dart';
 
+/// Chapter12: Integrating REST API
+///
 //Uncomment the line below to run from this file
 void main() => runApp(BooksApp());
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+/// Chapter18: Provider + ChangeNotifier
+///
 //The CounterApp uses Provider package + ChangeNotifier
 //void main() {
 //  //Providers are above CounterApp.

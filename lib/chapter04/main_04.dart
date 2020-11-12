@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-// TODO : Add reference to independent project
-//Chapter04: Flutter Project Structure
+
+/// Chapter04: Flutter Project Structure
+/// [hello_books](https://github.com/ptyagicodecamp/hello_books)
+
 // Project Structure of hello_books project
 //void main() {
 //  runApp(MyApp());

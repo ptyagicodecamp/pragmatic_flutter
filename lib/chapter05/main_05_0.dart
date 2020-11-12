@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-//Chapter05: Adding 'Hello Books' text in the center of the screen
-//NO SafeArea
+//Chapter05: Flutter App Structure
+
+///  Adding 'Hello Books' text in the center of the screen
+// NO SafeArea
 //void main() {
 //  runApp(HelloBooksApp());
 //}

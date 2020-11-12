@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// Chapter11: Persisting Data
+///
 enum AppThemes { light, dark }
 //Themes definitions
 ThemeData get defaultTheme => ThemeData(

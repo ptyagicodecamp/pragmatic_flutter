@@ -1,8 +1,8 @@
-/// Chapter06: Flutter Widgets
 import 'package:flutter/material.dart';
 
 import 'router.dart' as router;
 
+/// Chapter06: Flutter Widgets
 void main() => runApp(FlutterWidgetsExamples());
 
 class FlutterWidgetsExamples extends StatelessWidget {

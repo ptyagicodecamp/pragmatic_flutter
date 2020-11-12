@@ -1,4 +1,4 @@
-//importing the Dart package 
+//importing the Dart package
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -10,6 +10,7 @@ import 'book_details_page.dart';
 import 'booktile.dart';
 import 'page_not_found.dart';
 
+/// Chapter14: Navigation & Routing
 //Uncomment the line below to run from this file
 //void main() => runApp(BooksApp());
 
@@ -61,9 +62,10 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
 Future<List<BookModel>> makeHttpCall() async {
   //API Key: To be replaced with your key
   final apiKey = "$YOUR_API_KEY";
-  final apiEndpoint =  "https://www.googleapis.com/books/v1/volumes?key=$apiKey&q=python+coding";
+  final apiEndpoint =
+      "https://www.googleapis.com/books/v1/volumes?key=$apiKey&q=python+coding";
   final http.Response response =
-  await http.get(apiEndpoint, headers: {'Accept': 'application/json'});
+      await http.get(apiEndpoint, headers: {'Accept': 'application/json'});
 
   //Parsing API's HttpResponse to JSON format
   //Converting string response body to JSON representation
@@ -107,13 +109,11 @@ class _BooksListingState extends State<BooksListing> {
           //Passing bookModelObj to BookTile widget
           return GestureDetector(
               child: BookTile(bookModelObj: booksListing[index]),
-              onTap: () =>
-                  Navigator.pushNamed(
+              onTap: () => Navigator.pushNamed(
                     context,
                     '/details',
                     arguments: booksListing[index],
-                  )
-          );
+                  ));
         },
       ),
     );

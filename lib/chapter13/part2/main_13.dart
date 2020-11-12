@@ -1,58 +1,26 @@
-//importing the Dart package 
+//importing the Dart package
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import '../config.dart';
+import '../../config.dart';
 import 'book.dart';
-import 'book_details_page.dart';
 import 'booktile.dart';
-import 'page_not_found.dart';
 
+/// Chapter13: Data Modeling
+///
 //Uncomment the line below to run from this file
 //void main() => runApp(BooksApp());
 
+//Showing book listing in ListView
 class BooksApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //Using Dynamic Navigation (Named Routing)
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: BooksListing(),
-      //Named with onGenerateRoute
-      initialRoute: '/',
-      onGenerateRoute: generateRoute,
     );
-  }
-}
-
-Route<dynamic> generateRoute(RouteSettings routeSettings) {
-  final args = routeSettings.arguments;
-
-  switch (routeSettings.name) {
-    case '/':
-      return MaterialPageRoute(
-        builder: (context) => BooksListing(),
-      );
-
-    case '/details':
-      if (args is BookModel) {
-        return MaterialPageRoute(
-          builder: (context) => BookDetailsPage(
-            book: args,
-          ),
-        );
-      }
-
-      return MaterialPageRoute(
-        builder: (context) => PageNotFound(),
-      );
-
-    default:
-      return MaterialPageRoute(
-        builder: (context) => PageNotFound(),
-      );
   }
 }
 
@@ -61,9 +29,10 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
 Future<List<BookModel>> makeHttpCall() async {
   //API Key: To be replaced with your key
   final apiKey = "$YOUR_API_KEY";
-  final apiEndpoint =  "https://www.googleapis.com/books/v1/volumes?key=$apiKey&q=python+coding";
+  final apiEndpoint =
+      "https://www.googleapis.com/books/v1/volumes?key=$apiKey&q=python+coding";
   final http.Response response =
-  await http.get(apiEndpoint, headers: {'Accept': 'application/json'});
+      await http.get(apiEndpoint, headers: {'Accept': 'application/json'});
 
   //Parsing API's HttpResponse to JSON format
   //Converting string response body to JSON representation
@@ -105,15 +74,7 @@ class _BooksListingState extends State<BooksListing> {
         itemCount: booksListing == null ? 0 : booksListing.length,
         itemBuilder: (context, index) {
           //Passing bookModelObj to BookTile widget
-          return GestureDetector(
-              child: BookTile(bookModelObj: booksListing[index]),
-              onTap: () =>
-                  Navigator.pushNamed(
-                    context,
-                    '/details',
-                    arguments: booksListing[index],
-                  )
-          );
+          return BookTile(bookModelObj: booksListing[index]);
         },
       ),
     );

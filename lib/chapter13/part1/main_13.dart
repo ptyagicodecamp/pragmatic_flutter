@@ -1,4 +1,4 @@
-//importing the Dart package 
+//importing the Dart package
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -7,6 +7,8 @@ import 'package:http/http.dart' as http;
 import '../../config.dart';
 import 'booktile.dart';
 
+/// Chapter13: Data Modeling
+///
 //Uncomment the line below to run from this file
 //void main() => runApp(BooksApp());
 
@@ -26,9 +28,10 @@ class BooksApp extends StatelessWidget {
 Future<dynamic> makeHttpCall() async {
   //API Key: To be replaced with your key
   final apiKey = "$YOUR_API_KEY";
-  final apiEndpoint =  "https://www.googleapis.com/books/v1/volumes?key=$apiKey&q=python+coding";
+  final apiEndpoint =
+      "https://www.googleapis.com/books/v1/volumes?key=$apiKey&q=python+coding";
   final http.Response response =
-  await http.get(apiEndpoint, headers: {'Accept': 'application/json'});
+      await http.get(apiEndpoint, headers: {'Accept': 'application/json'});
 
   //Parsing API's HttpResponse to JSON format
   //Converting string response body to JSON representation

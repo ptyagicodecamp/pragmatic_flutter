@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 //Uses CounterEvent class for events
 //User CounterState class for states
-
+/// Chapter19: BLoC Pattern
 //void main() {
 //  runApp(CounterApp());
 //}

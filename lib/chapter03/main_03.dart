@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-// TODO : Add reference to independent project
-//Chapter03: Setting Up Environment
+
+/// Chapter03: Setting Up Environment
+/// [app_scaffold_demo](https://github.com/ptyagicodecamp/app_scaffold_demo)
+///
 // Test app for demonstrating Setting up development Environment for
 //Android, iOS, Web, Desktop (macOS & Linux).
 //macOS and Linux can only be run on their respective operating systems.

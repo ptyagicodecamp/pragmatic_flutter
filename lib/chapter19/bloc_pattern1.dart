@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+/// Chapter19: BLoC Pattern
+///
 //Uses enum for Counter Increment Event
 //Uses simply int to represent the state for a given event at a time
 

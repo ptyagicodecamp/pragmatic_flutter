@@ -1,8 +1,9 @@
-/// Chapter08: Responsive Interfaces
 import 'package:flutter/material.dart';
 
 import 'router.dart' as router;
 
+/// Chapter08: Responsive Interfaces
+///
 void main() => runApp(FlutterResponsiveLayoutsExamples());
 
 class FlutterResponsiveLayoutsExamples extends StatelessWidget {

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// Chapter16: Introduction to State Management
+///
 //Uncomment the line below to run from this file
 //void main() => runApp(CounterApp());
 
@@ -13,7 +15,7 @@ class CounterApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'CounterApp (ValueNotifier)'),
+      home: MyHomePage(title: 'CounterApp (Vanilla)'),
     );
   }
 }
@@ -28,10 +30,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final ValueNotifier<int> _counter = ValueNotifier<int>(0);
+  int _counter = 0;
 
   void _incrementCounter() {
-    _counter.value += 1;
+    setState(() {
+      _counter++;
+    });
   }
 
   @override
@@ -53,17 +57,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'You have pushed the button this many times:',
             ),
-            //Widget#7. Builds when valueNotifier is changed/updated
-            ValueListenableBuilder(
-              builder: (BuildContext context, int value, Widget child) {
-                print("Building ONLY Text widget");
-                //Widget#8
-                return Text(
-                  '$value',
-                  style: Theme.of(context).textTheme.headline4,
-                );
-              },
-              valueListenable: _counter,
+            //Widget#7
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
