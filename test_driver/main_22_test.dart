@@ -10,7 +10,7 @@ void main() {
 
     FlutterDriver flutterDriver;
 
-    //connect to the instrumented app in test_driver/main_26.dart
+    //connect to the instrumented app in test_driver/main_22.dart
     setUpAll(() async {
       flutterDriver = await FlutterDriver.connect();
     });
