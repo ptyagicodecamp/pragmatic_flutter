@@ -37,7 +37,7 @@ class MyFractionallySizedBox extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               widthFactor: 0.8,
               heightFactor: 0.2,
-              child: RaisedButton(
+              child: ElevatedButton(
                 child: Text(
                   "Tap",
                   style: TextStyle(
