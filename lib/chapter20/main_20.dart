@@ -76,15 +76,15 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                RaisedButton(
+                ElevatedButton(
                   key: Key('D'),
-                  color: Colors.red,
+                  style: ElevatedButton.styleFrom(primary: Colors.red),
                   onPressed: () => _decrementCounter(),
                   child: FaIcon(FontAwesomeIcons.minus),
                 ),
-                RaisedButton(
+                ElevatedButton(
                   key: Key('I'),
-                  color: Colors.green,
+                  style: ElevatedButton.styleFrom(primary: Colors.green),
                   onPressed: () => _incrementCounter(),
                   child: FaIcon(FontAwesomeIcons.plus),
                 )

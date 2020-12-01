@@ -68,7 +68,7 @@ void main() {
           MediaQuery(data: MediaQueryData(), child: CounterApp());
       await widgetTester.pumpWidget(testWidget);
 
-      //Tap increment Button (Red)
+      //Tap decrement Button (Red)
       await widgetTester.tap(find.byKey(Key('D')));
 
       await widgetTester.pump();
