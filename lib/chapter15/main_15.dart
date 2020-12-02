@@ -13,7 +13,7 @@ import 'page_not_found.dart';
 /// Chapter15:The Second Page: BookDetails Widget
 ///
 //Uncomment the line below to run from this file
-//void main() => runApp(BooksApp());
+void main() => runApp(BooksApp());
 
 class BooksApp extends StatelessWidget {
   @override
