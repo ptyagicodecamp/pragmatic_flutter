@@ -54,9 +54,12 @@ dependencies:
   #Flutter Icons
   font_awesome_flutter: ^8.8.1
 
-  #Chapter08
+  # Chapter08
   animated_floatactionbuttons: ^0.1.0
   syntax_highlighter: ^0.1.0
+
+  # Chapter15 (launcher icons for BooksApp)
+  flutter_launcher_icons: ^0.8.1
 
 dev_dependencies:
   #Integration Testing
@@ -101,6 +104,15 @@ flutter:
     - family: Pangolin
       fonts:
         - asset: assets/fonts/Pangolin-Regular.ttf
+
+flutter_icons:
+  ios: true
+  android: true
+  image_path_ios: "assets/launcher/app_logo.png"
+  image_path_android: "assets/launcher/app_logo.png"
+  adaptive_icon_background: "assets/launcher/app_logo_background.png"
+  adaptive_icon_foreground: "assets/launcher/app_logo.png"
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

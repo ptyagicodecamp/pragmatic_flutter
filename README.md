@@ -1,16 +1,46 @@
 # pragmatic_flutter
 
-Sample code snippets from Pragmatic Flutter Book
+# Building Web App
 
-## Getting Started
+In root directory:
 
-This project is a starting point for a Flutter application.
+```
+ flutter build web
+```
 
-A few resources to get you started if this is your first Flutter project:
+Above command generates web content in `build/web` directory.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+# Publishing content
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Set up Firebase Hosting
+
+Note: You need to install firebase sdk etc.
+Account: Androidbotsutdio.
+Project: ittybittylearnings
+
+```
+firebase init
+```
+
+## Test
+
+```
+cd deploy/
+
+firebase serve  #opens local website at port 5000
+
+```
+
+## Deploy
+
+```
+# copy files from build/web to deploy/public/ folder
+
+cd deploy/
+
+firebase deploy
+```
+
+## Configuration
+
+Checkout `deploy/firebase.json` config

@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "pragmatic-flutter-booksapp",
+    "public": "public/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
