@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import '../../config.dart';
-import 'book.dart';
+import 'bookmodel.dart';
 import 'booktile.dart';
 
 /// Chapter13: Data Modeling

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'book.dart';
+import 'bookmodel.dart';
 
 class BookTile extends StatelessWidget {
   final BookModel bookModelObj;
