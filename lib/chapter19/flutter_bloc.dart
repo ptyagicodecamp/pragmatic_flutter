@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// Chapter19: BLoC Pattern
-//void main() {
-//  runApp(CounterApp());
-//}
+void main() {
+  runApp(CounterApp());
+}
 
 class CounterApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -52,7 +52,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             //#6: Rebuilding Text widget for new state (count)
             BlocBuilder<CounterBloc, CounterState>(
-              cubit: _bloc,
+              //Flutter 2.2.3
+              bloc: _bloc,
               builder: (context, state) {
                 return Text(
                   '${state.counter}',

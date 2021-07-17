@@ -13,8 +13,8 @@ Future<String> makeHttpCall() async {
   final apiKey = "$YOUR_API_KEY";
   final apiEndpoint =
       "https://www.googleapis.com/books/v1/volumes?key=$apiKey&q=python+coding";
-  final http.Response response =
-      await http.get(apiEndpoint, headers: {'Accept': 'application/json'});
+  final http.Response response = await http
+      .get(Uri.parse(apiEndpoint), headers: {'Accept': 'application/json'});
 
   //This will print `flutter: Instance of 'Response'` on console.
   print(response);

@@ -14,12 +14,10 @@ class ThemePref extends DataClass implements Insertable<ThemePref> {
   factory ThemePref.fromData(Map<String, dynamic> data, GeneratedDatabase db,
       {String prefix}) {
     final effectivePrefix = prefix ?? '';
-    final intType = db.typeSystem.forDartType<int>();
-    final stringType = db.typeSystem.forDartType<String>();
     return ThemePref(
-      themeId:
-          intType.mapFromDatabaseResponse(data['${effectivePrefix}theme_id']),
-      themeName: stringType
+      themeId: const IntType()
+          .mapFromDatabaseResponse(data['${effectivePrefix}theme_id']),
+      themeName: const StringType()
           .mapFromDatabaseResponse(data['${effectivePrefix}theme_name']),
     );
   }
@@ -79,7 +77,7 @@ class ThemePref extends DataClass implements Insertable<ThemePref> {
   @override
   int get hashCode => $mrjf($mrjc(themeId.hashCode, themeName.hashCode));
   @override
-  bool operator ==(dynamic other) =>
+  bool operator ==(Object other) =>
       identical(this, other) ||
       (other is ThemePref &&
           other.themeId == this.themeId &&
@@ -143,37 +141,23 @@ class $ThemePrefsTable extends ThemePrefs
   final String _alias;
   $ThemePrefsTable(this._db, [this._alias]);
   final VerificationMeta _themeIdMeta = const VerificationMeta('themeId');
-  GeneratedIntColumn _themeId;
+  GeneratedColumn<int> _themeId;
   @override
-  GeneratedIntColumn get themeId => _themeId ??= _constructThemeId();
-  GeneratedIntColumn _constructThemeId() {
-    return GeneratedIntColumn(
-      'theme_id',
-      $tableName,
-      false,
-    );
-  }
-
+  GeneratedColumn<int> get themeId =>
+      _themeId ??= GeneratedColumn<int>('theme_id', aliasedName, false,
+          typeName: 'INTEGER', requiredDuringInsert: true);
   final VerificationMeta _themeNameMeta = const VerificationMeta('themeName');
-  GeneratedTextColumn _themeName;
+  GeneratedColumn<String> _themeName;
   @override
-  GeneratedTextColumn get themeName => _themeName ??= _constructThemeName();
-  GeneratedTextColumn _constructThemeName() {
-    return GeneratedTextColumn(
-      'theme_name',
-      $tableName,
-      false,
-    );
-  }
-
+  GeneratedColumn<String> get themeName =>
+      _themeName ??= GeneratedColumn<String>('theme_name', aliasedName, false,
+          typeName: 'TEXT', requiredDuringInsert: true);
   @override
   List<GeneratedColumn> get $columns => [themeId, themeName];
   @override
-  $ThemePrefsTable get asDslTable => this;
+  String get aliasedName => _alias ?? 'theme_prefs';
   @override
-  String get $tableName => _alias ?? 'theme_prefs';
-  @override
-  final String actualTableName = 'theme_prefs';
+  String get actualTableName => 'theme_prefs';
   @override
   VerificationContext validateIntegrity(Insertable<ThemePref> instance,
       {bool isInserting = false}) {
@@ -198,8 +182,8 @@ class $ThemePrefsTable extends ThemePrefs
   Set<GeneratedColumn> get $primaryKey => <GeneratedColumn>{};
   @override
   ThemePref map(Map<String, dynamic> data, {String tablePrefix}) {
-    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
-    return ThemePref.fromData(data, _db, prefix: effectivePrefix);
+    return ThemePref.fromData(data, _db,
+        prefix: tablePrefix != null ? '$tablePrefix.' : null);
   }
 
   @override
